@@ -1,0 +1,20 @@
+{
+  "name": "nstl",
+  "version": "0.0.1",
+  "devDependencies": {},
+  "homepage": "",
+  "description": "nstl",
+  "repository": "",
+  "main": "nstl.js",
+  "author": {
+    "name": "Simone Di Nuovo",
+    "email": "simonsavagerock@gmail.com"
+  },
+  "paths": {},
+  "readme": "ERROR: No README data found!",
+  "_id": "nstl@0.0.1",
+  "scripts": {},
+  "_shasum": "1daa5b7a414e6cac8a722253e6875c339b36a74a",
+  "_from": "D:\\Users\\eu469ou.AZGROUP\\AppData\\Roaming\\npm\\node_modules\\nstl",
+  "_resolved": "file:D:\\Users\\eu469ou.AZGROUP\\AppData\\Roaming\\npm\\node_modules\\nstl"
+}
