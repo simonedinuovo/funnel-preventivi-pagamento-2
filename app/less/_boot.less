@@ -1,0 +1,170 @@
+// --------------------------------------------------
+// --------------------------------------------------
+// --------------------------------------------------
+// --------------------------------------------------
+// --------------------------------------------------
+// Variables
+// --------------------------------------------------
+// --------------------------------------------------
+// --------------------------------------------------
+// --------------------------------------------------
+// --------------------------------------------------
+//Fonts
+@mainFont: "Lato", Helvetica, Arial, sans-serif;
+@fallbackFont: Helvetica, Arial, sans-serif;
+@sansSerif:  "Helvetica Neue", Helvetica, Arial, sans-serif;
+
+// Grayscale
+@black-10:                 darken(#fff, 10%);
+@black-20:                 darken(#fff, 20%);
+@black-30:                 darken(#fff, 30%);
+@black-40:                 darken(#fff, 40%);
+@black-50:                 darken(#fff, 50%);
+@black-60:                 darken(#fff, 60%);
+@black-70:                 darken(#fff, 70%);
+@black-80:                 darken(#fff, 80%);
+@black-90:                 darken(#fff, 90%);
+
+// Brand colors
+@orange:                  #fe9821;
+@lightorange:             #fe9121;
+@blue:                    #1154a3;
+@lightblue:               #3777C0;
+@lighterblue:             #9abbe1;
+@darkblue:                #073872;
+@white:                   #ffffff;
+@green:                   #49d070;
+@red:                     #FF4C4C;
+@grey:                    #e8eaef;
+@lightgrey:               #dadada;
+@black:                   #1f2123;
+@darkgrey:                lighten(@black, 40%);
+
+// Scaffolding
+@body-background:         #fff;
+@white:                   #fff;
+@text-color:              @black-50;
+@mainColor:               @orange;
+@mainColorLight:          #fead4d;
+@lightBlue:               #ccd6e1;
+
+// Links
+@link-color:              @blue;
+@link-color-hover:        darken(@link-color, 15%);
+
+@font-size-base:          14px;
+@font-size-large:         @font-size-base * 1.25; // ~18px
+@font-size-small:         @font-size-base * 0.85; // ~12px
+@font-size-mini:          @font-size-base * 0.75; // ~11px
+
+
+// --------------------------------------------------
+// --------------------------------------------------
+// --------------------------------------------------
+// --------------------------------------------------
+// --------------------------------------------------
+// Mixins
+// --------------------------------------------------
+// --------------------------------------------------
+// --------------------------------------------------
+// --------------------------------------------------
+// --------------------------------------------------
+
+// Retina images
+//
+// Retina background-image support with non-retina fall back
+.retina-image(@file-1x, @file-2x, @width-1x, @height-1x) {
+  background-image: url("@{file-1x}");
+
+  @media
+  only screen and (-webkit-min-device-pixel-ratio: 2),
+  only screen and (   min--moz-device-pixel-ratio: 2),
+  only screen and (     -o-min-device-pixel-ratio: 2/1),
+  only screen and (        min-device-pixel-ratio: 2),
+  only screen and (                min-resolution: 192dpi),
+  only screen and (                min-resolution: 2dppx) {
+    background-image: url("@{file-2x}");
+    background-size: @width-1x @height-1x;
+  }
+}
+
+
+// Box sizing
+.box-sizing(@box-model) {
+  -webkit-box-sizing: @box-model; // Safari <= 5
+     -moz-box-sizing: @box-model; // Firefox <= 19
+          box-sizing: @box-model;
+}
+
+// Single side border-radius
+.border-radius(@radius) {
+  border-radius: @radius;
+   -webkit-border-radius: @radius;
+   -moz-border-radius: @radius;
+}
+
+
+// Drop shadows
+.box-shadow(@shadow) {
+  -webkit-box-shadow: @shadow; // iOS <4.3 & Android <4.1
+          box-shadow: @shadow;
+}
+
+// Transitions
+.transition(@transition) {
+  -webkit-transition: @transition;
+     -moz-transition: @transition;
+       -o-transition: @transition;
+          transition: @transition;
+}
+
+// Opacity
+.opacity(@opacity) {
+  opacity: @opacity;
+  @opacity-ie: @opacity * 100;
+  filter: ~"alpha(opacity=@{opacity-ie})"; // IE8
+}
+
+// Placeholder text
+.placeholder(@color: @input-color-placeholder) {
+  &:-moz-placeholder            { color: @color; } // Firefox 4-18
+  &::-moz-placeholder           { color: @color; } // Firefox 19+
+  &:-ms-input-placeholder       { color: @color; } // Internet Explorer 10+
+  &::-webkit-input-placeholder  { color: @color; } // Safari and Chrome
+}
+
+.clearfix() {
+  *zoom: 1;
+  &:before,
+  &:after {
+    content: " "; // 1
+    display: table; // 2
+    // Fixes Opera/contenteditable bug:
+    // http://nicolasgallagher.com/micro-clearfix-hack/#comment-36952
+    line-height: 0;
+  }
+  &:after {
+    clear: both;
+  }
+}
+
+// Center-align a block level element
+.center-block() {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+// Sizing shortcuts
+.size(@width, @height) {
+  width: @width;
+  height: @height;
+}
+
+//text-transform:
+.transform(@string){
+  -webkit-transform: @string;
+  -moz-transform:    @string;
+  -ms-transform:     @string;
+  -o-transform:      @string;
+}

@@ -1,0 +1,41 @@
+{
+  "data": [
+    {
+      "name": "CISL",
+      "endPointPath": "/oneweb/ajax/aspro/az-direct-POC-it-cisl-dispatcher/",
+
+      "services": {
+        "superFastquote": {
+          "name": "superFastquote",
+          "method": "POST",
+          "path": "extquotations/superfastquote",
+          "timeout": 20,
+          "headers": {
+            "Content-Type": "application/json; charset=UTF-8"
+          },
+          "dataType":"json",
+          "isMocked": false
+        },
+        "printService": {
+          	"name": "print",
+          	"method": "POST",
+          	"path": "service/print",
+          	"timeout": 20,
+		  	"headers": {
+						"Content-Type": "application/json; charset=UTF-8"
+					},
+			"dataType":"json",
+          	"isMocked": false
+        },
+        "recalculateService": {
+          	"name": "recalculate",
+			"path": "service/print",
+          	"method": "POST",
+          	"path": "",
+          	"timeout": 20,
+          	"isMocked": true
+        }
+      }
+    }
+  ]
+}

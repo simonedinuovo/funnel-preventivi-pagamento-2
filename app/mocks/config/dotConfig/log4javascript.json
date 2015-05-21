@@ -1,0 +1,17 @@
+{
+	"performanceLog" :
+	{
+		"endpoint": "/oneweb/ajax/aspro/az-direct-IT-CISL-dispatcher-war/restservice/api/performancelog",
+		"logLevel" : "DEBUG"
+	},
+	"applicationLog" :
+	{
+		"endpoint": "/oneweb/ajax/aspro/az-direct-IT-CISL-dispatcher-war/restservice/api/applicationlog",
+		"logLevel" : "DEBUG"
+	},
+	"statisticsLog":
+	{
+		"endpoint": "/oneweb/ajax/aspro/az-direct-IT-CISL-dispatcher-war/restservice/api/statisticslog",
+		"logLevel" : "DEBUG"
+	}
+}

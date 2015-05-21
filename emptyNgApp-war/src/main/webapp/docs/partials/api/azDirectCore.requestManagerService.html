@@ -1,0 +1,76 @@
+<h1><code ng:non-bindable="">requestManagerService</code>
+<div><span class="hint">service in module <code ng:non-bindable="">azDirectCore</code>
+</span>
+</div>
+</h1>
+<div><h2 id="description">Description</h2>
+<div class="description"><div class="azdirectcore-requestmanagerservice-page"><p>Manager di chiamate ajax</p>
+</div></div>
+<div class="member method"><h2 id="methods">Methods</h2>
+<ul class="methods"><li><h3 id="methods_requestmanagerservice">requestManagerService(params)</h3>
+<div class="requestmanagerservice"><div class="requestmanagerservice-page"><p>Manager di chiamate ajax</p>
+</div><h5 id="methods_requestmanagerservice_parameters">Parameters</h5><table class="variables-matrix table table-bordered table-striped"><thead><tr><th>Param</th><th>Type</th><th>Details</th></tr></thead><tbody><tr><td>params</td><td><a href="" class="label type-hint type-hint-object">object</a></td><td><div class="requestmanagerservice-page"><p>oggetto con i parametri della chiamata. Se i dati sono presenti sul file di configurazione, sarà possibile richiamare solamente il nome del servizio per attuare la chiamata.
+<br/> <b><i>Example:</i><b/>
+<pre class="prettyprint linenums">
+        {
+               "name" : "superFastquote",
+               "method" : "POST",
+               "path" : "extquotations/superfastquote/",
+               "timeout" : 20,
+               "isMocked" : false,
+               "uriSuffix" : "",
+               "callerController": null,
+               "techHeader" : null,
+               "endPointPath" : "/oneweb/ajax/aspro/az-direct-POC-it-cisl-dispatcher/"
+           };
+</pre>
+</div></td></tr></tbody></table><h5 id="methods_requestmanagerservice_returns">Returns</h5><table class="variables-matrix"><tr><td><a href="" class="label type-hint type-hint-promise">promise</a></td><td><div class="requestmanagerservice-page"><p>oggetto &#39;promise&#39; della chiamata. Per maggiori informazioni :</p>
+<ul>
+<li>
+ <a target="_blank" href="https://github.com/kriskowal/q/wiki/API-Reference#promisefinallycallback">Promise Wiki</a>
+</li>
+<li>
+    <a target="_blank" href="https://docs.angularjs.org/api/ng/service/$q">Angular Promise</a>
+</li>
+<li>
+    <a target="_blank" href="https://developer.mozilla.org/it/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise documentazione Mozilla</a>
+</li>
+</ul></div></td></tr></table><h4 id="methods_requestmanagerservice_example">Example</h4>
+<div class="example"><div class="requestmanagerservice-page"><pre class="prettyprint linenums">
+var request = {
+                "name" : "superFastquote",
+                "method" : "GET",
+                "path" : "configServices.json"
+            };
+         requestManagerService(request)
+         .then(function(res){
+                        console.log("ok " , res)
+                     })
+         .catch(function(res){
+                        console.log("no" , res)
+                    })
+         </pre>
+         <pre class="prettyprint linenums">
+         var superFastquoteRequest = {
+            name : "superFastquote",
+            data : JSON.stringify(inputProvarequestManagerService),
+            dataType:'json',
+            headers: {
+                "Content-Type": "application/json; charset=UTF-8"
+            },
+            path:"http://192.168.33.10:8080/oneweb/ajax/aspro/az-direct-POC-it-cisl-dispatcher-war/extquotations/superfastquote"
+        };
+         requestManagerService(superFastquoteRequest)
+         .then(function(res){
+                console.log("requestManagerService ok! Dichiara: \n" , res)
+            })
+         .catch(function(res){
+                console.log("requestManagerService ko! Dichiara: \n" , res)
+            });
+         </pre>
+</div></div>
+</div>
+</li>
+</ul>
+</div>
+</div>

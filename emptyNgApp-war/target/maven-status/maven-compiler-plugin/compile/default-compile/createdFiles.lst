@@ -1,0 +1,7 @@
+com\allianz\transact\demo\model\City.class
+com\allianz\transact\demo\model\UserModel.class
+com\allianz\transact\demo\controller\SimpleResponseEntityExceptionHandlingAdvice.class
+com\allianz\transact\demo\model\ErrorResult.class
+com\allianz\transact\demo\controller\SimpleResponseEntityExceptionHandlingAdvice$1.class
+com\allianz\transact\demo\controller\RestController.class
+com\allianz\transact\demo\model\Result.class

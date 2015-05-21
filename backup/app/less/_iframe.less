@@ -1,0 +1,64 @@
+// ----------------------------------------------------------------- //
+
+// iFrame
+
+// ----------------------------------------------------------------- //
+
+.iframe-wrapper {
+	position: relative;
+	width: 100%;
+	height: 100vh;
+	padding: 0;
+	margin: 0;
+	border: 0;
+	overflow: hidden;
+}
+
+.hidden-sidebar {
+	position: relative;
+	width: auto;
+	height: 100vh;
+	padding: 0;
+	margin: 0;
+	border: 0;
+	margin-right: -15px;
+
+	iframe {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		margin-right: -15px;
+	}
+}
+
+
+// Fix iframe when height is set with javascript
+
+.jsheight {
+	height: auto;
+
+	.hidden-sidebar {
+		height: auto;
+		margin-right: 0;
+
+		iframe {
+			position: relative;
+			margin-right: 0;
+		}
+	}
+}
+
+
+// Fix iframe ie8
+
+.no-svg.no-borderradius.no-backgroundsize {
+	.iframe-wrapper {
+		height: 100%;
+	}
+
+	.hidden-sidebar {
+		height: 700px;
+	}
+}

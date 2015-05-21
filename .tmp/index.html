@@ -1,0 +1,95 @@
+<!--
+    @author AZDirect  <azdirect@allianz.it>
+    @desc Application entry point, container for all other views
+-->
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="format-detection" content="telephone=no"/>
+    <meta name="viewport"
+          content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height"/>
+    
+    <title>emptyNgApp</title>
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href='http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900' rel='stylesheet' type='text/css'>
+<link type="text/css" rel="stylesheet" href="lib/bootstrap/dist/fonts/glyphicons-halflings-regular.woff" />
+<link type="text/css" rel="stylesheet" href="lib/bootstrap/dist/fonts/glyphicons-halflings-regular.woff2" />
+<link type="text/css" rel="stylesheet" href="lib/bootstrap/dist/fonts/glyphicons-halflings-regular.ttf" />
+<link type="text/css" rel="stylesheet" href="lib/bootstrap/dist/fonts/glyphicons-halflings-regular.svg" />
+<link type="text/css" rel="stylesheet" href="lib/bootstrap/dist/fonts/glyphicons-halflings-regular.eot" />
+<link type="text/css" rel="stylesheet" href="toolkit/appdesign.min.css" />
+<link type="text/css" rel="stylesheet" href="toolkit/fonts/all-icons.woff" />
+<link type="text/css" rel="stylesheet" href="toolkit/fonts/all-icons.eot" />
+<link type="text/css" rel="stylesheet" href="toolkit/fonts/all-icons.svg" />
+<link type="text/css" rel="stylesheet" href="toolkit/fonts/all-icons.ttf" />
+<link type="text/css" rel="stylesheet" href="app/css/01_jqueryui.css" />
+<link type="text/css" rel="stylesheet" href="app/css/99_main.css" />
+<link type="text/css" rel="stylesheet" href="app/css/vendorlesshat.css" />
+<link type="text/css" rel="stylesheet" href="app/css/vendornormalize.css" />
+<script type="text/javascript" src="lib/jquery/dist/jquery.js"></script>
+<script type="text/javascript" src="lib/underscore/underscore.js"></script>
+<script type="text/javascript" src="lib/angular/angular.js"></script>
+<script type="text/javascript" src="lib/angular-route/angular-route.js"></script>
+<script type="text/javascript" src="lib/angular-animate/angular-animate.js"></script>
+<script type="text/javascript" src="lib/angular-resource/angular-resource.js"></script>
+<script type="text/javascript" src="lib/angular-cookies/angular-cookies.js"></script>
+<script type="text/javascript" src="lib/angular-translate/dist/angular-translate.js"></script>
+<script type="text/javascript" src="lib/angular-translate/dist/angular-translate-loader-partial/angular-translate-loader-partial.js"></script>
+<script type="text/javascript" src="lib/angular-mocks/angular-mocks.js"></script>
+<script type="text/javascript" src="toolkit/bootstrap.js"></script>
+<script type="text/javascript" src="app/js/app.js"></script>
+<script type="text/javascript" src="app/js/route.js"></script>
+<script type="text/javascript" src="app/js/config.js"></script>
+<script type="text/javascript" src="app/js/controllers/emptyCtrl.js"></script>
+<script type="text/javascript" src="app/js/controllers/quoteCtrl.js"></script>
+<script type="text/javascript" src="app/js/controllers/userDataCtrl.js"></script>
+<script type="text/javascript" src="app/js/core/directives/inputDateDirective.js"></script>
+<script type="text/javascript" src="app/js/core/directives/inputPlateDirective.js"></script>
+<script type="text/javascript" src="app/js/core/directives/inputTextDirective.js"></script>
+<script type="text/javascript" src="app/js/core/libs/log4javascript.1.4.11.js"></script>
+<script type="text/javascript" src="app/js/core/providers/azLogProvider.js"></script>
+<script type="text/javascript" src="app/js/core/services/dateDiffService.js"></script>
+<script type="text/javascript" src="app/js/core/services/dotConfigService.js"></script>
+<script type="text/javascript" src="app/js/core/services/fiscalCodeService.js"></script>
+<script type="text/javascript" src="app/js/core/services/payloadFactoryService.js"></script>
+<script type="text/javascript" src="app/js/core/services/requestManagerService.js"></script>
+<script type="text/javascript" src="app/js/core/services/technicalHeaderFactory.js"></script>
+<script type="text/javascript" src="app/js/core/services/troyService.js"></script>
+<script type="text/javascript" src="app/js/core/services/validationFactoryService.js"></script>
+<script type="text/javascript" src="app/js/directives/appVersion.js"></script>
+<script type="text/javascript" src="app/js/filters/ps.js"></script>
+<script type="text/javascript" src="app/js/services/cityService.js"></script>
+<script type="text/javascript" src="app/js/services/quoteService.js"></script>
+<script type="text/javascript" src="app/js/vendor/codfiscale.js"></script>
+<script type="text/javascript" src="app/js/vendor/html5shiv.js"></script>
+<script type="text/javascript" src="app/js/vendor/jquery.maskedinput.js"></script>
+<script type="text/javascript" src="app/js/vendor/jquery.nanoscroller.js"></script>
+<script type="text/javascript" src="app/js/vendor/jquery.ui.js"></script>
+<script type="text/javascript" src="app/js/vendor/modernizr.js"></script>
+<script type="text/javascript" src="app/js/vendor/respond.js"></script>
+<script type="text/javascript" src="app/mocks/emptyNgAppMocks.js"></script>
+<script type="text/javascript" src="app/mocks/genericMocks.js"></script>
+    <script>
+        var troyContext = {
+            "APIBaseUrls": {
+                "aspro": "/oneweb/ajax/aspro/",
+                "configBase": "/oneweb/content-api/v1/config/document;guid=null/",
+                "contentAPI": "/oneweb/content-api/v1/",
+                "contextAPI": "/oneweb/ajax/aspro/context-service/",
+                "idmAPI": "/oneweb/idm/v1/"
+            },
+            "user": "user"
+        };
+        if (window.parent.mashup) {
+            window.parent.mashup.initialize.initializeFrame(window);
+        }
+    </script>
+</head>
+<body ng-app="emptyNgApp" ng-cloak class="ng-cloak">
+<header></header>
+<div ng-view></div>
+<footer></footer>
+</body>
+</html>

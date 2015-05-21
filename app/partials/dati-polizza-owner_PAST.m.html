@@ -1,0 +1,248 @@
+<fieldset>
+    <h3 class="border"><span>Dati personali</span></h3>
+    <div class="row">
+
+        <div class="col-sm-6">
+
+
+            <!-- INPUT: Nome -->
+
+            <div class="row">
+                <div class="col-sm-5">
+                    <label>Nome</label>
+                </div>
+                <div class="col-sm-6">
+                    <div class="input-group full-width-col">
+
+                        <input-text  name="nomeName"
+                                     id="nome"
+                                     bind-to="userForm.nome"
+                                     required
+                                     class="form-control lettersonly"
+                                     validation-type="name"
+                                     error-class="error"
+                                     placeholder="Mario"
+                                     default-error-class="ng-hide">
+                            <validation key="required" error-message="errorMessage.generic.required"></validation>
+                            <validation key="pattern" error-message="errorMessage.generic.invalid"></validation>
+                            <input-layout>
+                                <span class="input">
+                                    <input>
+                                </span>
+                            </input-layout>
+                            <error-layout>
+                                <label style="display: inline-block;" ng-repeat="(key, text) in validators" class="{{hasError(key)}}" ng-bind="text"></label>
+                            </error-layout>
+
+                        </input-text>
+                        <div> Watching nome: <span>{{ userForm.nome  }}</span></div>
+                        <!--<input type="text" id="nome" name="nome" class="form-control required lettersonly error"  data-cf="nome" tabindex="0">-->
+
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- INPUT: Cognome -->
+
+            <div class="row">
+                <div class="col-sm-5">
+                    <label>Cognome</label>
+                </div>
+                <div class="col-sm-6">
+                    <div class="input-group full-width-col">
+                        <input-text  name="cognomeName"
+                                     id="cognome"
+                                     bind-to="userForm.cognome"
+                                     required
+                                     class="form-control required lettersonly"
+                                     validation-type="name"
+                                     error-class="error"
+                                     placeholder="Rossi"
+                                     default-error-class="ng-hide">
+                            <validation key="required" error-message="errorMessage.generic.required"></validation>
+                            <validation key="pattern" error-message="errorMessage.generic.invalid"></validation>
+                            <input-layout>
+                                                <span class="input">
+                                                    <input>
+                                                </span>
+                            </input-layout>
+                            <error-layout>
+                                <label style="display: inline-block;" ng-repeat="(key, text) in validators" class="{{hasError(key)}}" ng-bind="text"></label>
+                            </error-layout>
+
+                        </input-text>
+                        <div> Watching cognome: <span>{{ userForm.cognome  }}</span></div>
+                        <!-- <input type="text" id="cognome" name="cognome" class="form-control required lettersonly" placeholder="Rossi" data-cf="cognome" tabindex="0"> -->
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- INPUT: Data di nascita -->
+
+            <!--<div class="row">
+                <div class="col-sm-5">
+                    <label>Data di Nascita</label>
+                </div>
+                <div class="col-sm-6">
+                    <div class="input-group full-width-col">
+                        <input-date   name="data-di-nascita"
+                                      id="data-di-nascita"
+                                      bind-to="datadinascita"
+                                      required
+                                      class="form-control input_date required dateFormat"
+                                      validation-type="normal"
+                                      placeholder="GG/MM/AAAA"
+                                      data-lang="it-IT"
+                                      error-class="error"
+                                      data-date="01/04/2014"
+                                      max="=-18y"
+                                      data-datepicker
+                                      default-error-class="ng-hide">
+                            <validation key="required" error-message="errorMessage.birthdate.required"></validation>
+                            <validation key="pattern" error-message="errorMessage.birthdate.invalid"></validation>
+                            <validation key="invalidMax">SEI TYROPPO IN LA</validation>
+                            <validation key="invalidMin">SEI TROPPO giovani</validation>
+                            <input-layout>
+                                                <span class="input">
+                                                    <input>
+                                                    <div class="datepicker-opener"></div>
+                                                </span>
+                            </input-layout>
+                            <error-layout>
+                                <label style="display: inline-block;" ng-repeat="(key, text) in validators" class="{{hasError(key)}}" ng-bind="text"></label>
+                            </error-layout>
+                        </input-date>
+
+                        <!-- <input type="text" id="data-nascita" name="data-nascita" ng-model="datadinascita" class="form-control input_date required dateFormat" placeholder="GG/MM/AAAA" data-datepicker data-date="01/04/2014" /> -->
+                        <!-- <div class="datepicker-opener"></div> -->
+            <!--     <div> Watching datadinascita: <span>{{ userForm.datadinascita  }}</span></div>
+            </div>
+        </div>
+    </div> -->
+
+
+            <!-- INPUT: Sesso intestatario "M" -->
+            <!-- codice fiscale -->
+            <div class="row">
+                <div class="col-sm-5">
+                    <label>CAP</label>
+                </div>
+                <div class="col-sm-6">
+                    <div class="input-group full-width-col">
+                        <input type="text" placeholder="CAP" ng-model="userForm.CAP" class="required cap" id="cap" name="cap" tabindex="0">
+                    </div>
+                </div>
+            </div>
+            <!-- codice fiscale -->
+
+            <input type="hidden" id="sesso_intestatario" name="sesso_intestatario" ng-model="userForm.sesso" data-cf="sesso" value="">
+
+        </div>
+
+        <div class="col-sm-6">
+
+
+            <!-- INPUT: Comune di nascita -->
+
+            <div class="row">
+                <div class="col-sm-5 col-sm-offset-1">
+                    <label>Comune di Nascita</label>
+                </div>
+                <div class="col-sm-6">
+                    <div class="input-group full-width-col">
+                        <input-text  name="comunenascitaName"
+                                     id="comunenascita"
+                                     bind-to="userForm.comunenascita"
+                                     required
+                                     class="form-control required lettersonly"
+                                     data-autocomplete-comune="app/partials/json/data-esempio-comune.json"
+                                     validation-type="name"
+                                     error-class="error"
+                                     default-error-class="ng-hide">
+                            <validation key="required" error-message="errorMessage.generic.required"></validation>
+                            <validation key="pattern" error-message="errorMessage.generic.invalid"></validation>
+                            <input-layout>
+                                                <span class="input">
+                                                    <input>
+
+                                                </span>
+                            </input-layout>
+                            <error-layout>
+                                <label style="display: inline-block;" ng-repeat="(key, text) in validators" class="{{hasError(key)}}" ng-bind="text"></label>
+                            </error-layout>
+
+                        </input-text>
+                        <input type="hidden" name="codCatasName" ng-model="userForm.codCatas" ng-value="null"/>
+                        <div> Watching comune di nascita: <span ng-show="userForm"> {{ userForm.comunenascita }}</span></div>
+                        <div> Watching codice catastale: <span ng-show="userForm">{{ userForm.codCatas }}</span></div>
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- SELECT: Nucleo familiare -->
+
+            <!-- <div class="row">
+                <div class="col-sm-5 col-sm-offset-1">
+                    <label class="lbl_select">Nucleo familiare</label>
+                </div>
+                <div class="col-sm-6">
+                    <select data-placeholder="Seleziona" id="selNucleoFam" name="selNucleoFam" class="required" tabindex="0">
+                        <option selected value></option>
+                        <option value="3">Coppia con figli</option>
+                        <option value="2">Coppia senza figli</option>
+                        <option value="1">Una persona</option>
+                        <option value="4">Altro</option>
+                    </select>
+                </div>
+            </div> -->
+
+
+            <!-- INPUT: Codice fiscale -->
+
+            <div class="row">
+                <div class="col-sm-5 col-sm-offset-1">
+                    <label>Codice fiscale</label>
+                </div>
+                <div class="col-sm-6">
+                    <div class="input-group full-width-col">
+
+                        <input-text  name="CFName"
+                                     id="CF"
+                                     bind-to="userForm.CF"
+                                     required
+                                     placeholder="RSS MRA 60A01 H501 Q"
+                                     class="form-control"
+                                     cf-name="userForm.nome"
+                                     cf-surname="userForm.cognome"
+                                     cf-sex="userForm.sesso"
+                                     cf-cod-catas="userForm.codCatas"
+                                     cf-birth-date="userForm.datadinascita"
+                                     cf-birth-date-lang="it-IT"
+                                     validation-type="codFisc"
+                                     error-class="error"
+                                     default-error-class="ng-hide">
+                            <validation key="required" error-message="errorMessage.generic.required"></validation>
+                            <validation key="pattern" error-message="errorMessage.generic.invalid"></validation>
+                            <validation key="complexCheck" >Validazzione complessa fallita</validation>
+                            <input-layout>
+                                                <span class="input">
+                                                    <input>
+                                                </span>
+                            </input-layout>
+                            <error-layout>
+                                <label style="display: inline-block;" ng-repeat="(key, text) in validators" class="{{hasError(key)}}" ng-bind="text"></label>
+                            </error-layout>
+                        </input-text>
+                        <!-- <div> Watching CF: <span>{{ personalData.CF.$viewValue }}</span></div> -->
+                        <div> Watching CF: <span>{{ userForm.CF  }}</span></div>
+                        <!--<input type="text" class="required codicefiscale" id="cf" name="cf" placeholder="RSS MRA 60A01 H501 Q" data-warning="Il codice non coincide con i tuoi dati" tabindex="0">-->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</fieldset>

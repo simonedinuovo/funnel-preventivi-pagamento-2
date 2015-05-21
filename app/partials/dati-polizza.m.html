@@ -1,0 +1,102 @@
+<header>
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-sm-2">
+				<a href="/" class="logo" target="_parent" tabindex="-1"></a>
+			</div>
+			<div class="col-sm-4">
+				<span class="subject">
+					Preventivo auto <strong>FIAT CY971ML</strong>
+				</span>
+			</div>
+			<div class="col-sm-4">
+				<div class="header_convention">
+					Preventivo con convenzione Croce Rossa Italiana
+				</div>
+			</div>
+			<div class="col-sm-2">
+				<div class="welcome">
+					<span class="welcome_label">Benvenuto</span>
+					<span class="welcome_user_name">Mario</span>
+				</div>
+			</div>
+		</div>
+	</div>
+</header>
+
+<section class="page">
+	<div class="container-fluid">
+
+		<div class="formWrapper">
+			<section class="form_step">
+				<ul class="steps ul_inline three">
+					<li class="current">
+						<span>1. Dati polizza</span>
+						<svg version="1.1" id="Livello_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+						viewBox="0 0 315 47" enable-background="new 0 0 315 47" preserveAspectRatio="none"><path fill="#004595" d="M293,47H2c-1.1,0-2-0.9-2-2V2c0-1.1,0.9-2,2-2h291l22,23.5L293,47z"/></svg>
+					</li>
+					<li>
+						<span>2. Contatti</span>
+						<svg version="1.1" id="Livello_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+						viewBox="0 0 315 47" enable-background="new 0 0 315 47" preserveAspectRatio="none"><polygon fill="#004595" points="293,47 0,47 22,23.5 0,0 293,0 315,23.5 "/></svg>
+					</li>
+					<li>
+						<span>3. Riepilogo Dati</span>
+						<svg version="1.1" id="Livello_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+						viewBox="0 0 315 47" enable-background="new 0 0 315 47" preserveAspectRatio="none"><path fill="#004595" d="M313,47H0l22-23.5L0,0h313c1.1,0,2,0.9,2,2v43C315,46.1,314.1,47,313,47z"/></svg>
+					</li>
+				</ul>
+			</section>
+
+			<!--<section class="headmessage">
+				<div class="row">
+					<div class="col-sm-4">
+						<h6>prezzo per te</h6>
+						<b class="price">1.150,00 <span>€/anno</span></b>
+					</div>
+				</div>
+			</section>-->
+
+			<section class="form_body">
+				<form class="salva_preventivo_form custom_form" name="personalData"  real-time-validate="false" novalidate>
+
+                <nstl:include path="app/partials/dati-polizza-owner.m.html"></nstl:include>
+
+                <nstl:include path="app/partials/dati-polizza-ditta.m.html"></nstl:include>
+
+                    <!-- guidatore aggiuntivo -->
+                <nstl:include path="app/partials/dati-polizza-guidatore-aggiuntivo.m.html"></nstl:include>
+
+                    <!-- fine guidatore aggiuntivo -->
+
+                    <!-- contraente diverso dal destinatario -->
+                <nstl:include path="app/partials/dati-polizza-contraente-diverso.m.html"></nstl:include>
+                    <!-- fine contraente diverso dal destinatario -->
+
+                <nstl:include path="app/partials/dati-polizza-vincolo-leasing.m.html"></nstl:include>
+
+					<div class="stickPoint">
+						<div class="form_controls sticker" >
+							<div class="wrap">
+								<div class="row">
+									<div class="col-sm-3">
+										<button class="btn btn-primary btn-submit btn-allcaps indietro inactive" type="button" tabindex="-1"><span>&#8249;</span> Indietro</button>
+
+									</div>
+									<div class="col-sm-3 col-sm-offset-6">
+										<button ng-click="prosegui(this)" class="btn btn-primary btn-submit btn-allcaps" type="submit" tabindex="0">Prosegui <span>&#8250;</span></button>
+
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</form>
+			</section>
+
+		</div>
+	</div>
+</section>
+
+<script src="app/partials/js/main.js"></script>
+<script src="app/partials/js/salvataggio-preventivo-datipolizza.js"></script>

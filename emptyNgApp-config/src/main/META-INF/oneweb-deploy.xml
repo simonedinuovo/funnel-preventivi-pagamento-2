@@ -1,0 +1,14 @@
+<oneweb-deploy xmlns="oneweb/deploy/1.0">
+
+	<ext xmlns="oneweb/aspro-ext/1.0">
+		<aspromapping virtualHostName="emptyNgApp"
+			additionalEndpointPath="/emptyNgApp-war" applySecurityInformation="true"
+			https="true">
+			<endpointList>
+				<appliance target="business" isSSL="true" />
+			</endpointList>
+		</aspromapping>
+	</ext>
+
+</oneweb-deploy>
+

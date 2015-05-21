@@ -1,0 +1,46 @@
+<h1><code ng:non-bindable="">technicalHeaderFactory</code>
+<div><span class="hint">service in module <code ng:non-bindable="">azDirectCore</code>
+</span>
+</div>
+</h1>
+<div><h2 id="description">Description</h2>
+<div class="description"><div class="azdirectcore-technicalheaderfactory-page"><p>Manager della chiamata al technical Header</p>
+</div></div>
+<div class="member method"><h2 id="methods">Methods</h2>
+<ul class="methods"><li><h3 id="methods_technicalheader">technicalHeader(params)</h3>
+<div class="technicalheader"><div class="technicalheader-page"><p>factory technicalHeader</p>
+</div><h5 id="methods_technicalheader_parameters">Parameters</h5><table class="variables-matrix table table-bordered table-striped"><thead><tr><th>Param</th><th>Type</th><th>Details</th></tr></thead><tbody><tr><td>params</td><td><a href="" class="label type-hint type-hint-object">object</a></td><td><div class="technicalheader-page"><p>oggetto con i parametri technical header.
+<br/> <b><i>Example:</i><b/>
+<pre class="prettyprint linenums">
+            {
+                   language:"DE",
+                   channel : "10a"
+               };
+</pre>
+</div></td></tr></tbody></table><h5 id="methods_technicalheader_returns">Returns</h5><table class="variables-matrix"><tr><td><a href="" class="label type-hint type-hint-promise">promise</a></td><td><div class="technicalheader-page"><p>oggetto &#39;promise&#39; della chiamata. Per maggiori informazioni :</p>
+<ul>
+<li>
+ <a target="_blank" href="https://github.com/kriskowal/q/wiki/API-Reference#promisefinallycallback">Promise Wiki</a>
+</li>
+<li>
+    <a target="_blank" href="https://docs.angularjs.org/api/ng/service/$q">Angular Promise</a>
+</li>
+<li>
+    <a target="_blank" href="https://developer.mozilla.org/it/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise documentazione Mozilla</a>
+</li>
+</ul></div></td></tr></table><h4 id="methods_technicalheader_example">Example</h4>
+<div class="example"><div class="technicalheader-page"><pre class="prettyprint linenums">
+technicalHeaderFactory({language:"BO", channel : "08h"})
+.then(function(res){
+   console.log("technicalHeaderFactory declares" , res);
+})
+.catch(function(res){
+   console.log("Oh no!");
+})
+</pre>
+</div></div>
+</div>
+</li>
+</ul>
+</div>
+</div>

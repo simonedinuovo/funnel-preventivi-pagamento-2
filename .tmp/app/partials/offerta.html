@@ -1,0 +1,870 @@
+<script>
+	var Guarantees = {
+
+		"protezione_rivalse": {
+			price: 2530,
+			title: "Protezione rivalse",
+			massimale: null,
+			franchigia: null,
+			consigliata: true,
+			on_delete: {
+				text: "Grazie a questa garanzia se guidi in stato di ebbrezza oppure se il tuo veicolo non è in regola con le revisioni, in caso di sinistro Genialloyd non applicherà la rivalsa che le compete?",
+				img: "app/img/popup-images/228.jpg"
+			},
+			data: {}
+		},
+
+		"furto_incendio": {
+			price: 15985,
+			title: "Furto e incendio",
+			massimale: 1790000,
+			franchigia: [ 25000, 50000 ],
+			consigliata: true,
+			on_delete: {
+				text: "Statisticamente il numero dei tentativi di furto sono maggiori dei furti veri e propri? Con questa garanzia sono coperti anche i danni subiti dal veicolo in seguito a un tentativo di furto!",
+				img: "app/img/popup-images/101.jpg"
+			},
+			data: {
+				massimale: 1790000,
+				franchigia: 25000
+			}
+		},
+
+		"estensioni-furto-incendio":{
+			price: 1500,
+			title: "Estensioni furto e incendio",
+			massimale: null,
+			franchigia: null,
+			consigliata: true,
+			required: "furto_incendio",
+			on_delete: {
+				text: "Statisticamente il numero dei tentativi di furto sono maggiori dei furti veri e propri? Con questa garanzia sono coperti anche i danni subiti dal veicolo in seguito a un tentativo di furto!",
+				img: "app/img/popup-images/101.jpg"
+			},
+			data: {}
+		},
+
+		"eventi-naturali":{
+			price: 3948,
+			title: "Eventi Naturali",
+			massimale: 1790000,
+			franchigia: 5000000,
+			consigliata: true,
+			data: {}
+		},
+
+		"collisione-light":{
+			price: 14650,
+			title: "Collisione light con veicolo identificato",
+			massimale: [300000,500000],
+			franchigia: 25000,
+			data: {
+				massimale: 300000
+			},
+		},
+
+		"collisione-veicolo":{
+			price: 18070,
+			title: "Collisione con veicolo identificato",
+			massimale: 1790000,
+			franchigia: 25000,
+			data: {}
+		},
+
+		"estensione-kasko-completa":{
+			price: 24484,
+			title: "Estensione Kasko Completa",
+			massimale: 1790000,
+			franchigia: 50000,
+			data: {}
+		},
+
+		"eventi-vandalici-sociopolitici":{
+			price: 5043,
+			title: "Eventi Vandalici e sociopolitici",
+			massimale: 1790000,
+			franchigia: 50000,
+			data: {}
+		},
+
+		"rottura-cristalli":{
+			price: 2196,
+			title: "Rottura cristalli",
+			massimale: 250000,
+			franchigia: 15000,
+			data: {}
+		},
+
+		"infortuni-guidatore":{
+			price: 3501,
+			title: "Infortuni del guidatore",
+			massimale: [50000,100000,200000],
+			franchigia: ["3%","10%"],
+			data: {
+				massimale: 50000,
+				franchigia: '3%'
+			},
+		},
+
+		"assistenza-plus":{
+			price: 1100,
+			title: "Assistenza Plus",
+			massimale: null,
+			franchigia: null,
+			data: {}
+		},
+
+		"assistenza-stradale-zeropensieri":{
+			price: 800,
+			title: "Assistenza Stradale ZeroPensieri",
+			massimale: null,
+			franchigia: null,
+			data: {}
+		},
+
+		"tutela-legale":{
+			price: 1800,
+			title: "Tutela legale",
+			massimale: 1000000,
+			franchigia: null,
+			data: {
+				massimale: 1000000
+			}
+		},
+
+		"protezione-patente":{
+			price: 1500,
+			title: "Protezione patente",
+			massimale: [1500,2500,5000],
+			franchigia: null,
+			data: {
+				massimale: 1500
+			}
+		},
+
+	};
+</script>
+
+<header>
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-sm-2">
+				<a href="/" class="logo" target="_parent" tabindex="-1"></a>
+			</div>
+			<div class="col-sm-4">
+				<span class="subject">
+					Preventivo auto <strong>FIAT CY971ML</strong>
+				</span>
+			</div>
+			<div class="col-sm-4">
+				<div class="header_convention">
+					Preventivo con convenzione Croce Rossa Italiana
+				</div>
+			</div>
+			<div class="col-sm-2">
+				<div class="welcome">
+					<span class="welcome_label">Benvenuto</span>
+					<span class="welcome_user_name">Mario</span>
+				</div>
+			</div>
+		</div>
+	</div>
+</header>
+
+<section class="pagina-offerta">
+
+	<div class="verygrandtotale">
+		<div class="row">
+			<div class="col-xs-5">
+				<div class="grandtitolo">Totale<br/><span>spesa annuale</span></div>
+			</div>
+			<div class="col-xs-7"><strong data-total>514,00 €</strong></div>
+		</div>
+		<div class="row" style="border-top: 1px solid rgba(255,255,255,.1)">
+			<div class="col-xs-12">
+				<button onclick="location.reload();" data-buy class="btn btn-primary btn-submit btn-allcaps btn-margin-bottom" type="submit" style="margin-top: 15px !important; display: block;"><span data-buy-text>Acquista ora</span> <span>&#8250;</span></button>
+			</div>
+		</div>
+	</div>
+
+	<form id="offerta" class="container-fluid">
+		<div class="row">
+
+			<!-- BOXES -->
+			<div class="col-md-8">
+
+				<div class="offerta-box main selected" style="font-weight: bold">
+					<div class="content">
+						<div class="title">
+							<h2>Rc Auto e Assistenza Base</h2>
+							<span>Massimale e capitale 40 Milioni €</span>
+						</div>
+						<div class="price">514,00 €</div>
+					</div>
+				</div>
+
+				<h3 class="border-second"><span>Garanzie consigliate da genialloyd</span></h3>
+				<div id="guarantees-recommended"></div>
+
+				<h3 class="border-second"><span>Altre garanzie</span></h3>
+				<div id="guarantees-others"></div>
+
+			</div>
+			<!-- FINE BOXES -->
+
+			<!-- SIDEBAR -->
+
+			<div class="col-md-4">
+				<aside id="offerta-sidebar">
+
+					<div class="head_side">
+						<h2>Preventivo Auto</h2>
+						<a data-toggle="modal" data-target="#info-modale" class="info_offerta" href="javascript: false;">
+							<img src="app/img/ico-info-2.png" alt="">
+						</a>
+
+					</div>
+
+					<div id="offerta-recap">
+
+						<div class="offerta-recap-row">
+							<div class="offerta-recap-row-title">Rc Auto e Assistenza Base</div>
+							<div class="offerta-recap-row-price" style="right: 0">514,00 €</div>
+						</div>
+
+						<h5 style="margin-bottom: 8px">Garanzie Accessorie</h5>
+						<div id="guarantees-list" class="nano">
+							<div class="nano-content"></div>
+						</div>
+
+					</div>
+
+					<div class="check-pay">
+						<div class="row">
+							<div class="col-xs-8">
+								<h5>Pagamento</h5>
+							</div>
+							<div class="col-xs-4" style="text-align: right">
+								<label class="radio radio-inline">
+									<input name="cadenza_pagamento" type="radio" value="semestrale">
+									<span class="label">Semestrale</span>
+								</label>
+								<label class="radio radio-inline">
+									<input name="cadenza_pagamento" type="radio" value="annuale" checked>
+									<span class="label">Annuale</span>
+								</label>
+							</div>
+						</div>
+					</div>
+
+					<div class="subtotal">
+						<ul>
+							<li class="subtle">Tariffa Standard <span data-total-standard>514,00 €</span></li>
+							<li>Sconto 0% <span>- 0,00 €</span></li>
+						</ul>
+					</div>
+
+					<div class="grandtotale">
+						<div class="row">
+							<div class="col-xs-5">
+								<div class="grandtitolo">Totale<br/><span>spesa annuale</span></div>
+							</div>
+							<div class="col-xs-7"><strong data-total>514,00 €</strong></div>
+						</div>
+					</div>
+
+				</aside>
+
+				<div class="row">
+					<div class="col-sm-12">
+						<div id="offerta-acceptance">
+							<h4>Dichiaro di accettare le seguenti condizioni</h4>
+							<div>
+								<div class="checkbox">
+									<label>
+										<input type="checkbox" checked id="risarcimento_cond" name="risarcimento_cond" />
+										<span>Risarcimento in forma specifica</span>
+									</label>
+								</div>
+								<a data-popup="app/partials/html/info-offerta.html" class="info-cond">?</a>
+								<div class="clearfix"></div>
+							</div>
+							<div>
+								<div class="checkbox">
+									<label>
+										<input type="checkbox" checked id="condizioni" name="riconciliazione_par" />
+										<span>Riconciliazione paritetica</span>
+									</label>
+								</div>
+								<a data-popup="app/partials/html/info-offerta.html" class="info-cond">?</a>
+								<div class="clearfix"></div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<button data-buy class="btn btn-primary btn-submit btn-allcaps btn-margin-bottom" type="submit">
+					<span data-buy-text>Acquista ora</span>
+					<span>&#8250;</span>
+				</button>
+				<button data-save class="btn btn-tertiary main btn-submit btn-allcaps" type="submit">Salva e prosegui <span>&#8250;</span></button>
+
+			</div>
+			<!-- FINE SIDEBAR -->
+
+		</div>
+
+	</form>
+</section>
+
+<!-- Modale di aggiunta massimale/franchigia -->
+<div id="guarantee-edit-modal" class="modal fade">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="btn btn-default close" data-dismiss="modal"><span class="glyphicon glyphicon-cross"></span><span class="sr-only">Close</span></button>
+				<strong class="modal-title">Attenzione!</strong>
+			</div>
+			<div class="modal-body"></div>
+			<div class="modal-footer">
+				<a data-guarantee-edit-add class="btn btn-primary btn-submit btn-allcaps" type="submit">CONFERMA <span>›</span></a>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+<!-- Modale di garanzia generica Required -->
+<div id="guarantee-required-modal" class="modal fade">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="btn btn-default close" data-dismiss="modal"><span class="glyphicon glyphicon-cross"></span><span class="sr-only">Close</span></button>
+				<strong class="modal-title">Attivazione garanzia</strong>
+			</div>
+			<div class="modal-body"></div>
+			<div class="modal-footer">
+				<a data-guarantee-required-add class="btn btn-primary btn-submit btn-allcaps btn-block">ATTIVA E CONTINUA <span>›</span></a>
+				<a data-dismiss="modal" class="btn btn-tertiary btn-submit btn-allcaps btn-block">Annulla</a>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+<!-- Modale di garanzia generica Info -->
+<div id="guarantee-info-modal" class="modal fade">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="btn btn-default close" data-dismiss="modal"><span class="glyphicon glyphicon-cross"></span><span class="sr-only">Close</span></button>
+				<strong class="modal-title">Informazioni</strong>
+			</div>
+			<div class="modal-body"></div>
+		</div>
+	</div>
+</div>
+
+<!-- Modale di sicurezza eliminazione -->
+<div id="guarantee-ondelete-modal" class="modal fade">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="btn btn-default close" data-dismiss="modal"><span class="glyphicon glyphicon-cross"></span><span class="sr-only">Close</span></button>
+				<strong class="modal-title"></strong>
+			</div>
+			<div class="modal-body"></div>
+			<div class="modal-footer">
+				<a data-guarantee-ondelete-stay class="btn btn-primary btn-submit btn-allcaps btn-block apply">Voglio essere protetto</a>
+				<a data-guarantee-ondelete-delete class="btn btn-tertiary btn-submit btn-allcaps btn-block">Non mi interessa</a>
+			</div>
+		</div>
+	</div>
+</div>
+
+<!-- Popuppone -->
+<div id="info-modale" class="modal fade">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="container-fluid">
+				<div class="row">
+					<div class="col-sm-12">
+						<a href="/" class="logo" tabindex="-1"></a>
+						<button type="button" class="close-modale" data-dismiss="modal"></button>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-sm-12">
+						<h3 class="border"><span>Importante, leggi con attenzione</span></h3>
+						<p class="notice"><strong>Attenzione:</strong> sei già assicurato con Genialloyd! Il preventivo che stai calcolando non comprende i vantaggi riservati a chi è già nostro cliente. Entro un mese dalla scandenza della polizza riceverai via e-mail il tuo preventivo di rinnovo, consultavile nahc nell'Area Personale</p>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-sm-12">
+						<h4>Questa quotazione vale nelle ipotesi di:</h4>
+						<div class="cards">
+							<div>
+								<img src="app/img/card-01.png" alt="" class="img-responsive">
+								<h4>Guida Esperta</h4>
+								<p>Veicolo guidato da te e persone con più di 23 anni e patente da almeno 2 anni</p>
+							</div>
+							<div>
+								<img src="app/img/card-02.png" alt="" class="img-responsive">
+								<h4>Percorrenza</h4>
+								<p>Veicolo guidato da te e persone con più di 23 anni e patente da almeno 2 anni</p>
+							</div>
+							<div>
+								<img src="app/img/card-03.png" alt="" class="img-responsive">
+								<h4>Custodia Mezzo</h4>
+								<p>Veicolo guidato da te e persone con più di 23 anni e patente da almeno 2 anni</p>
+							</div>
+							<div>
+								<img src="app/img/card-04.png" alt="" class="img-responsive">
+								<h4>No GPL</h4>
+								<p>Veicolo guidato da te e persone con più di 23 anni e patente da almeno 2 anni</p>
+							</div>
+							<div class="last">
+								<img src="app/img/card-05.png" alt="" class="img-responsive">
+								<h4>Impiego</h4>
+								<p>Veicolo guidato da te e persone con più di 23 anni e patente da almeno 2 anni</p>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="row" style="margin-bottom: 10px">
+					<div class="col-sm-9">
+						<h3 style="margin-top: 0" data-offerta-editing-text="Stai modificando i dati della tua polizza. Torna alla situazione iniziale cliccando su annulla" class="borders">Se la tua situazione non corrisponde a quella descritta, modifica i tuoi dati</h3>
+					</div>
+					<div class="col-sm-3">
+						<button data-offerta-editing-assump class="btn btn-tertiary main btn-submit btn-allcaps" type="submit"><span>Modifica i dati</span> <span>&#8250;</span></button>
+					</div>
+
+				</div>
+
+				<section id="editing-assump">
+
+					<h6 class="assump">Info Aggiuntive</h6>
+					<div class="selecting-assump">
+						<div class="row">
+							<div class="col-sm-4">
+
+								<div class="row assumption">
+									<div class="col-xs-7">
+										<label for="stile-guida">Stile di Guida</label>
+									</div>
+									<div class="col-xs-5">
+										<select name="stile-guida" id="">
+											<option value="nome-1">Valore</option>
+											<option value="nome-2">Valore</option>
+											<option value="nome-3">Valore</option>
+										</select>
+									</div>
+								</div>
+
+								<div class="row assumption">
+									<div class="col-xs-7">
+										<label for="stile-guida">Professione</label>
+									</div>
+									<div class="col-xs-5">
+										<select name="stile-guida" id="">
+											<option value="nome-1">Valore</option>
+											<option value="nome-2">Valore</option>
+											<option value="nome-3">Valore</option>
+										</select>
+									</div>
+								</div>
+
+								<div class="row assumption">
+									<div class="col-xs-7">
+										<label for="allestimento">Allestimento auto</label>
+									</div>
+									<div class="col-xs-5">
+										<select name="stile-guida" id="">
+											<option value="nome-1">Valore</option>
+											<option value="nome-2">Valore</option>
+											<option value="nome-3">Valore</option>
+										</select>
+									</div>
+								</div>
+
+							</div>
+							<div class="col-sm-4">
+								<div class="row assumption">
+									<div class="col-xs-7">
+										<label for="percorr_annua">Percorr. Media Annua</label>
+									</div>
+									<div class="col-xs-5">
+										<select name="percorr_annua" id="">
+											<option value="nome-1">Valore</option>
+											<option value="nome-2">Valore</option>
+											<option value="nome-3">Valore</option>
+										</select>
+									</div>
+								</div>
+
+								<div class="row assumption">
+									<div class="col-xs-7">
+										<label for="antifurto">Tipo Antifurto</label>
+									</div>
+									<div class="col-xs-5">
+										<select name="antifurto" id="">
+											<option value="nome-1">Valore</option>
+											<option value="nome-2">Valore</option>
+											<option value="nome-3">Valore</option>
+										</select>
+									</div>
+								</div>
+
+								<div class="row assumption">
+									<div class="col-xs-7">
+										<label for="alimentazione">Alimentazione</label>
+									</div>
+									<div class="col-xs-5">
+										<select name="alimentazione" id="">
+											<option value="nome-1">Valore</option>
+											<option value="nome-2">Valore</option>
+											<option value="nome-3">Valore</option>
+										</select>
+									</div>
+								</div>
+							</div>
+							<div class="col-sm-4">
+								<div class="row assumption">
+									<div class="col-xs-7">
+										<label for="custodia">Veicolo custodito</label>
+									</div>
+									<div class="col-xs-5">
+										<select name="custodia" id="">
+											<option value="nome-1">Valore</option>
+											<option value="nome-2">Valore</option>
+											<option value="nome-3">Valore</option>
+										</select>
+									</div>
+								</div>
+
+								<div class="row assumption">
+									<div class="col-xs-7">
+										<label for="bersani">Agevolazione Bersani</label>
+									</div>
+									<div class="col-xs-5">
+										<select name="bersani" id="">
+											<option value="nome-1">Valore</option>
+											<option value="nome-2">Valore</option>
+											<option value="nome-3">Valore</option>
+										</select>
+									</div>
+								</div>
+
+								<div class="row assumption">
+									<div class="col-xs-7">
+										<label for="prima_classe">Anni in classe 1</label>
+									</div>
+									<div class="col-xs-5">
+										<select name="prima_classe" id="">
+											<option value="nome-1">Valore</option>
+											<option value="nome-2">Valore</option>
+											<option value="nome-3">Valore</option>
+										</select>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div class="row">
+						<div class="col-sm-9">
+						</div>
+						<div class="col-sm-3 pull-right">
+							<button class="btn btn-tertiary main btn-submit btn-allcaps" type="submit">Ricalcola <span>&#8250;</span></button>
+						</div>
+					</div>
+
+				</section>
+
+
+				<div class="accordion tab-accordion item-5 js-accordion" role="tablist" aria-multiselectable="true" style="margin-bottom: 20px">
+					<div class="panel">
+						<div class="accordion-panel-heading collapsed" data-toggle="collapse" data-parent=".js-accordion" data-target=".js-collapse-1" role="tab">
+							<span class="name">Dati Personali</span>
+							<span class="espandi"><b>Espandi</b> <i></i></span>
+						</div>
+						<div class="accordion-panel-collapse collapse js-collapse-1" role="tabpanel">
+							<div class="accordion-panel-body">
+								<table cellspacing="0" cellpadding="0">
+									<tbody>
+										<tr>
+											<th scope="row">CAP e Località di residenza:</th>
+											<td>66034 Lanciano (CH)</td>
+										</tr>
+										<tr>
+											<th scope="row">Data di Nascita</th>
+											<td>13/04/1954</td>
+										</tr>
+										<tr>
+											<th scope="row">Tipologia Intestatario</th>
+											<td><strong>Femmina</strong></td>
+										</tr>
+									</tbody>
+								</table>
+
+							</div>
+						</div>
+					</div>
+
+
+					<div class="panel">
+						<div class="accordion-panel-heading collapsed" data-toggle="collapse" data-parent=".js-accordion" data-target=".js-collapse-2" role="tab">
+							<span class="name">Tipo Guida</span>
+							<span class="espandi"><b>Espandi</b> <i></i></span>
+						</div>
+						<div class="accordion-panel-collapse collapse js-collapse-2" role="tabpanel">
+							<div class="accordion-panel-body">
+								<table cellspacing="0" cellpadding="0">
+									<tbody>
+										<tr>
+											<th scope="row">Guida Esperta</th>
+											<td>L'auto è guidata dall'intestario e da persone con più di 23 anni e patente da almeno 2 anni.</td>
+										</tr>
+									</tbody>
+								</table>
+
+							</div>
+						</div>
+					</div>
+
+
+					<div class="panel">
+						<div class="accordion-panel-heading collapsed" data-toggle="collapse" data-parent=".js-accordion" data-target=".js-collapse-3" role="tab">
+							<span class="name">Dati Auto</span>
+							<span class="espandi"><b>Espandi</b> <i></i></span>
+						</div>
+						<div class="accordion-panel-collapse collapse js-collapse-3" role="tabpanel">
+							<div class="accordion-panel-body">
+								<table cellspacing="0" cellpadding="0">
+									<tbody>
+										<tr>
+											<th scope="row">Marca:</th>
+											<td>ALFA ROMEO</td>
+										</tr>
+										<tr>
+											<th scope="row">Modello:</th>
+											<td>Spider 2.4 JTDm (2007)</td>
+										</tr>
+										<tr>
+											<th scope="row">Targa:</th>
+											<td>DR 017 MN</td>
+										</tr>
+										<tr>
+											<th scope="row">Prima Immatricolazione:</th>
+											<td>05/2008</td>
+										</tr>
+										<tr>
+											<th scope="row">Valore Commerciale:</th>
+											<td>10.700 €</td>
+										</tr>
+										<tr>
+											<th scope="row">Numero cavalli fiscali:</th>
+											<td>22</td>
+										</tr>
+										<tr>
+											<th scope="row">GPL - Metano:</th>
+											<td>No</td>
+										</tr>
+										<tr>
+											<th scope="row">Auto custodita in garage/box:</th>
+											<td>Si</td>
+										</tr>
+										<tr>
+											<th scope="row">Percorrenza media:</th>
+											<td>10.000 - 20.000 Km </td>
+										</tr>
+										<tr>
+											<th scope="row">Kw:</th>
+											<td>147.00</td>
+										</tr>
+										<tr>
+											<th scope="row">Tipo uso dell'auto:</th>
+											<td>Auso Privato</td>
+										</tr>
+									</tbody>
+								</table>
+
+							</div>
+						</div>
+					</div>
+
+
+					<div class="panel">
+						<div class="accordion-panel-heading collapsed" data-toggle="collapse" data-parent=".js-accordion" data-target=".js-collapse-4" role="tab">
+							<span class="name">Dati Assicurativi</span>
+							<span class="espandi"><b>Espandi</b> <i></i></span>
+						</div>
+						<div class="accordion-panel-collapse collapse js-collapse-4" role="tabpanel">
+							<div class="accordion-panel-body">
+								<table cellspacing="0" cellpadding="0">
+									<tbody>
+										<tr>
+											<th scope="row">Classe Bonus Malus:</th>
+											<td>CU (Ex CIP) 1</td>
+										</tr>
+										<tr>
+											<th scope="row">Classe Genialloyd:</th>
+											<td>1</td>
+										</tr>
+										<tr>
+											<th scope="row">Situazione assicurativa:</th>
+											<td>Attestato con bonus malus</td>
+										</tr>
+										<tr>
+											<th scope="row">Agevolazione Bersani già usufruita:</th>
+											<td>No</td>
+										</tr>
+										<tr>
+											<th scope="row">Altre polizze con Genialloyd:</th>
+											<td>No</td>
+										</tr>
+										<tr>
+											<th scope="row">Famigliari già clienti Genialloyd:</th>
+											<td>No</td>
+										</tr>
+										<tr>
+											<th scope="row">Sinistri ultimi due anni:</th>
+											<td>Nessuno</td>
+										</tr>
+										<tr>
+											<th scope="row">Sinistri nell'attestato di rischio:</th>
+											<td>Uno</td>
+										</tr>
+										<tr>
+											<th scope="row">Compagnia provenienza:</th>
+											<td>LINEAR SPA</td>
+										</tr>
+									</tbody>
+								</table>
+
+							</div>
+						</div>
+					</div>
+
+
+					<div class="panel">
+						<div class="accordion-panel-heading collapsed" data-toggle="collapse" data-parent=".js-accordion" data-target=".js-collapse-5" role="tab">
+							<span class="name">Dati Polizza</span>
+							<span class="espandi"><b>Espandi</b> <i></i></span>
+						</div>
+						<div class="accordion-panel-collapse collapse js-collapse-5" role="tabpanel">
+							<div class="accordion-panel-body">
+								<table cellspacing="0" cellpadding="0">
+									<tbody>
+										<tr>
+											<th scope="row">Decorrenza dalle ore:</th>
+											<td>24:00 del 18/03/2015</td>
+										</tr>
+									</tbody>
+								</table>
+
+							</div>
+						</div>
+					</div>
+
+				</div>
+
+			</div>
+
+		</div>
+	</div>
+</div>
+
+<!-- UNDERSCORE TPLS -->
+
+<script type="text/template" id="tpl-offerta-recap-row">
+	<div class="offerta-recap-row" data-guarantee-id="<%= id %>">
+		<div class="offerta-recap-row-title"><%= title %></div>
+		<div class="offerta-recap-row-price"><%= _.euro(price) %></div>
+		<a data-guarantee-remove="<%= id %>"></a>
+	</div>
+</script>
+
+<script type="text/template" id="tpl-guarantee-required">
+	<h3 class="orange"><%= want.title %></h3>
+	<p>Attivando <b><%= want.title %></b>, verranno attivate automaticamente le seguenti garanzie collegate: <b><%= required.title %></b>.<br/>Vuoi procedere?</p>
+	<div class="guarantee-required-list">
+		<div class="title"><%= want.title %></div>
+		<div class="price"><%= _.euro(want.price) %></div>
+	</div>
+	<div class="guarantee-required-list">
+		<div class="title"><%= required.title %></div>
+		<div class="price"><%= _.euro(required.price) %></div>
+	</div>
+</script>
+
+<script type="text/template" id="tpl-guarantee-box">
+	<div class="offerta-box <%= index%2===0 ? 'odd' : 'even' %>" data-guarantee-id="<%= id %>">
+		<div class="content">
+			<div class="title">
+				<h2><%= title %></h2>
+				<% if (data.massimale) { %>
+					<div>Massimale: <span data-massimale><%= _.euro(data.massimale) %></span></div>
+					<% } %>
+					<% if (data.franchigia) { %>
+						<div>Franchigia: <span data-franchigia><%= _.euro(data.franchigia) %></span></div>
+						<% } %>
+					</div>
+					<div class="price"><%= price_string %></div>
+				</div>
+				<div class="box-side">
+					<div class="<%= editable ? '' : 'disabled' %>" data-edit="true"></div>
+					<div data-info="true"></div>
+				</div>
+				<a class="box-add"><b></b></a>
+			</div>
+		</script>
+
+		<script type="text/template" id="tpl-guarantee-ondelete">
+			<div class="checkUnselected">
+				<div class="row">
+					<div class="col-sm-5">
+						<img src="<%= on_delete.img %>" />
+					</div>
+					<div class="col-sm-7">
+						<h3>Lo Sapevi che...</h3>
+						<p><%= on_delete.text %></p>
+						<p><strong>Sei sicuro di volerne fare a meno?</strong></p>
+					</div>
+				</div>
+			</div>
+		</script>
+
+		<script type="text-template" id="tpl-guarantee-mf">
+			<% if (_.isArray(massimale)) { %>
+				<div class="mb">
+					<label  class="label-description">Seleziona massimale copertura</label>
+					<div class="tac" data-radio-parent>
+						<% _.each(massimale, function(e,k) { %>
+							<label for="guarantee-<%= id %>-massimale-<%= k %>" class="radio radio-inline offerta-price-selector" data-radio>
+								<input <%= data.massimale == e ? 'checked' : '' %> type="radio" name="guarantee-<%= id %>-massimale" id="guarantee-<%= id %>-massimale-<%= k %>" value="<%= e %>" />
+								<span class="label"><%= _.euro(e) %></span>
+							</label>
+							<% }); %>
+</div>
+<div class="clearfix"></div>
+</div>
+<% } %>
+<% if (_.isArray(franchigia)) { %>
+	<div class="mb">
+		<label class="label-description">Seleziona franchigia copertura</label>
+		<div class="tac" data-radio-parent>
+			<% _.each(franchigia, function(e, k) { %>
+				<label for="guarantee-<%= id %>-franchigia-<%= k %>" class="radio radio-inline offerta-price-selector" data-radio>
+					<input <%= data.franchigia == e ? 'checked' : '' %> type="radio" name="guarantee-<%= id %>-franchigia" id="guarantee-<%= id %>-franchigia-<%= k %>" value="<%= e %>" />
+					<span class="label"><%= _.euro(e) %></span>
+				</label>
+				<% }); %>
+</div>
+<div class="clearfix"></div>
+</div>
+<% } %>
+</script>
+
+<script src="app/js/main.js"></script>
+<script src="app/partials/js/offerta.js"></script>

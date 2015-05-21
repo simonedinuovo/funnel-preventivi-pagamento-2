@@ -1,0 +1,85 @@
+<h1><code ng:non-bindable="">fiscalCode</code>
+<div><span class="hint">service in module <code ng:non-bindable="">azDirectCore.validationModule</code>
+</span>
+</div>
+</h1>
+<div><h2 id="description">Description</h2>
+<div class="description"><div class="azdirectcore-validationmodule-fiscalcode-page"><p>The fiscalCode contains function that help during develop with Date;</p>
+</div></div>
+<div class="member method"><h2 id="methods">Methods</h2>
+<ul class="methods"><li><h3 id="methods_calculate">calculate(nome, surname, gg, mm, aa, place)</h3>
+<div class="calculate"><div class="calculate-page"><p>This method give the Fiscal code, for example :
+<pre class="prettyprint linenums">
+
+    console.log(fiscalCode.calculate("mario", "rossi", 31, 05, 1992, "M", "H501");
+
+    //will print "RSSMRA92E31H501J"
+
+</pre>
+</div><h5 id="methods_calculate_parameters">Parameters</h5><table class="variables-matrix table table-bordered table-striped"><thead><tr><th>Param</th><th>Type</th><th>Details</th></tr></thead><tbody><tr><td>nome</td><td><a href="" class="label type-hint type-hint-string">string</a></td><td><div class="calculate-page"><p>Person&#39;s name from which generate fiscal code</p>
+</div></td></tr><tr><td>surname</td><td><a href="" class="label type-hint type-hint-string">string</a></td><td><div class="calculate-page"><p>Person&#39;s surname from which generate fiscal code</p>
+</div></td></tr><tr><td>gg</td><td><a href="" class="label type-hint type-hint-string">string</a></td><td><div class="calculate-page"><p>Person&#39;s day of birthdate from which generate fiscal code</p>
+</div></td></tr><tr><td>mm</td><td><a href="" class="label type-hint type-hint-string">string</a></td><td><div class="calculate-page"><p>Person&#39;s month of birthdate from which generate fiscal code  (NB: starting from 0 as month of Data js obj)</p>
+</div></td></tr><tr><td>aa</td><td><a href="" class="label type-hint type-hint-string">string</a></td><td><div class="calculate-page"><p>Person&#39;s year of birthdate from which generate fiscal code</p>
+</div></td></tr><tr><td>place</td><td><a href="" class="label type-hint type-hint-string">string</a></td><td><div class="calculate-page"><p>Person&#39;s birthplace from which generate fiscal code</p>
+</div></td></tr></tbody></table><h5 id="methods_calculate_returns">Returns</h5><table class="variables-matrix"><tr><td><a href="" class="label type-hint type-hint-string">string</a></td><td><div class="calculate-page"><p>Fiscal code</p>
+</div></td></tr></table></div>
+</li>
+<li><h3 id="methods_encode_comune">encode_comune(comune_pattern)</h3>
+<div class="encode_comune"><div class="encode-comune-page"><p>This method give the Catastal code for calculate fiscal code if valid, for example :
+<pre class="prettyprint linenums">
+
+    console.log(fiscalCode.encode_comune(31,05,1992,"M");
+
+    //will print "31E92"
+
+</pre>
+</div><h5 id="methods_encode_comune_parameters">Parameters</h5><table class="variables-matrix table table-bordered table-striped"><thead><tr><th>Param</th><th>Type</th><th>Details</th></tr></thead><tbody><tr><td>comune_pattern</td><td><a href="" class="label type-hint type-hint-number">number</a></td><td><div class="encode-comune-page"><p>Catastal code of birth city</p>
+</div></td></tr></tbody></table><h5 id="methods_encode_comune_returns">Returns</h5><table class="variables-matrix"><tr><td><a href="" class="label type-hint type-hint-string">string</a></td><td><div class="encode-comune-page"><p>Catastal code string of fiscal code or empty string if not valid</p>
+</div></td></tr></table></div>
+</li>
+<li><h3 id="methods_encode_data">encode_data(gg, mm, aa, sex)</h3>
+<div class="encode_data"><div class="encode-data-page"><p>This method give the encoding of birthdate for calculate fiscal code, for example :
+<pre class="prettyprint linenums">
+
+    console.log(fiscalCode.encode_data(31,05,1992,"M");
+
+    //will print "31E92"
+
+</pre>
+</div><h5 id="methods_encode_data_parameters">Parameters</h5><table class="variables-matrix table table-bordered table-striped"><thead><tr><th>Param</th><th>Type</th><th>Details</th></tr></thead><tbody><tr><td>gg</td><td><a href="" class="label type-hint type-hint-number">number</a></td><td><div class="encode-data-page"><p>Day of birthdate</p>
+</div></td></tr><tr><td>mm</td><td><a href="" class="label type-hint type-hint-number">number</a></td><td><div class="encode-data-page"><p>Month of birthdate (NB: starting from 0 as month of Data js obj)</p>
+</div></td></tr><tr><td>aa</td><td><a href="" class="label type-hint type-hint-number">number</a></td><td><div class="encode-data-page"><p>Year of birthdate</p>
+</div></td></tr><tr><td>sex</td><td><a href="" class="label type-hint type-hint-string">string</a></td><td><div class="encode-data-page"><p>Sex of person</p>
+</div></td></tr></tbody></table><h5 id="methods_encode_data_returns">Returns</h5><table class="variables-matrix"><tr><td><a href="" class="label type-hint type-hint-string">string</a></td><td><div class="encode-data-page"><p>Partial string of fiscal code</p>
+</div></td></tr></table></div>
+</li>
+<li><h3 id="methods_encode_name">encode_name(name)</h3>
+<div class="encode_name"><div class="encode-name-page"><p>This method give the encoding of namer for calculate fiscal code, for example :
+<pre class="prettyprint linenums">
+
+    console.log(fiscalCode.encode_name("Mario");
+
+    //will print "MRA"
+
+</pre>
+</div><h5 id="methods_encode_name_parameters">Parameters</h5><table class="variables-matrix table table-bordered table-striped"><thead><tr><th>Param</th><th>Type</th><th>Details</th></tr></thead><tbody><tr><td>name</td><td><a href="" class="label type-hint type-hint-string">string</a></td><td><div class="encode-name-page"><p>Name from which will be calculated from the respective portion of the fiscal code.</p>
+</div></td></tr></tbody></table><h5 id="methods_encode_name_returns">Returns</h5><table class="variables-matrix"><tr><td><a href="" class="label type-hint type-hint-string">string</a></td><td><div class="encode-name-page"><p>Partial string of fiscal code</p>
+</div></td></tr></table></div>
+</li>
+<li><h3 id="methods_encode_surname">encode_surname(surname)</h3>
+<div class="encode_surname"><div class="encode-surname-page"><p>This method give the encoding of surname for calculate fiscal code, for example :
+<pre class="prettyprint linenums">
+
+    console.log(fiscalCode.encode_surname("Rossi");
+
+    //will print "RSS"
+
+</pre>
+</div><h5 id="methods_encode_surname_parameters">Parameters</h5><table class="variables-matrix table table-bordered table-striped"><thead><tr><th>Param</th><th>Type</th><th>Details</th></tr></thead><tbody><tr><td>surname</td><td><a href="" class="label type-hint type-hint-string">string</a></td><td><div class="encode-surname-page"><p>Surname from which will be calculated from the respective portion of the fiscal code.</p>
+</div></td></tr></tbody></table><h5 id="methods_encode_surname_returns">Returns</h5><table class="variables-matrix"><tr><td><a href="" class="label type-hint type-hint-string">string</a></td><td><div class="encode-surname-page"><p>Partial string of fiscal code</p>
+</div></td></tr></table></div>
+</li>
+</ul>
+</div>
+</div>

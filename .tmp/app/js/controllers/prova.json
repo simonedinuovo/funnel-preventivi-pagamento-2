@@ -1,0 +1,8 @@
+[ {
+  "eClass" : "http://allianz.com/it.allianz.genialloyd.extperson#//ExtWebuser",
+  "userName" : "villagabr923",
+  "emailChannel" : {
+    "eClass" : "http://allianz.com/com.allianz.direct.contact#//EmailChannel",
+    "email" : "gabriele.villa.vele@gmail.com"
+  }
+} ]

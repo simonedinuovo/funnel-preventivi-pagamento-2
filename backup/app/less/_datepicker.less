@@ -1,0 +1,64 @@
+.custom_form {
+	input.dateFormat {
+		font-family: @mainFont;
+		line-height: normal;
+		border: 1px solid @lightBlue;
+		.border-radius(2px);
+		padding: 6px 8px;
+		font-size: 15px;
+		width: 80%;
+		float: left;
+		margin: 0 0 10px 0;
+		box-sizing: border-box;
+		clear: both;
+
+		@media screen and (max-width: 950px) {
+			width: 100%;
+			-webkit-appearance: textfield;
+			-moz-appearance: textfield;
+			min-height: 2.1em;
+		}
+
+		.isIpad & {
+			width: 100%;
+			-webkit-appearance: textfield;
+			-moz-appearance: textfield;
+			min-height: 2.1em;
+		}
+	}
+
+	.input-group {
+		.datepicker-opener {
+			display: inline-block;
+			cursor: pointer;
+			width: 25px;
+			height: 23px;
+			margin: 4px 0 0 8px;
+			background-position: 0 0;
+			background-repeat: no-repeat;
+			background-image: url(data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAEBAQEBAQEBAQECAQEBAgICAQECAgMCAgICAgMEAwMDAwMDBAQEBAUEBAQGBgYGBgYICAgICAkJCQkJCQkJCQn/2wBDAQICAgMDAwUEBAUIBgUGCAkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQn/wAARCAAXABkDAREAAhEBAxEB/8QAGAAAAwEBAAAAAAAAAAAAAAAAAAEGBAr/xAAuEAABAwMDAgMHBQAAAAAAAAABAgMEBQYRABIhExQWMUEkUVRVVmHTcZGUldT/xAAYAQADAQEAAAAAAAAAAAAAAAAAAQMCBf/EACcRAAECBAUEAwEAAAAAAAAAAAEAAgMREyESMUFR0XGRoeEiUvCB/9oADAMBAAIRAxEAPwDs3iWazOTLVEuqnvJgtKflkdwNjSCAVcsjyJGuwYxEptN+nK5YhTycPPCEWay5BfqSLqp6oUZaG338SMJW4CUjHRzzjRWM5YTP+copWniEv7wh2zWWIcSoO3VT0Q55cTEf9owsskBeB0c8EjQIxJIwmY6coMK08Qv14WPw7TfrCnftJ/DrVR31PjlKmPsPPCprUdtwsXX20Ga2BSZBkhctpZU1vbyE4ZTg5xyc/pqUUPm2ZGe3tbhlvyscv2icN23PBVbUiDNEQTYnWaMtouFe1e0hXRwB7xg6HB9UXE5HT2mMNM2OY/ZJVV23BaFpFyDNVFLtR7ZtMtoOJIWjduUWSDn0wBj76GB9R1xpp7ScW4G2Ov7JSPWtL5bUf5zP+fVpRNx2PKnNmx7+lXWpXpUhi6yuHCR29JkOI2QI7YUQtsYVtQNw58jxqMWGAW3Oe5VIbz8rDLYJw69KVZVbkmHCC2psRKWxAjhshSV8lARtJ44JHGh0MVQJnI6lMPNM2GY0CVVr0pu0LSkCHCK5DtRC0KgR1Np2LQBtQUbU5zzgc+uhkMVHCZ01KTnnA2w10CkfE034Cnf1kX8erUhue5U6h2HYL//Z);
+
+			@media screen and (max-width: 950px) {
+				display: none;
+			}
+		}
+	}
+}
+
+.datepicker { z-index: 300 !important; }
+
+.datepicker-dropdown .day.active,
+.datepicker-dropdown .prev.active,
+.datepicker-dropdown .next.active,
+.datepicker-dropdown .datepicker-switch.active,
+.datepicker-dropdown .day:hover,
+.datepicker-dropdown .prev:hover,
+.datepicker-dropdown .next:hover,
+.datepicker-dropdown .datepicker-switch:hover,
+.datepicker-dropdown .month:hover,
+.datepicker-dropdown .year:hover,
+.datepicker-dropdown .month:active,
+.datepicker-dropdown .year:active {
+	background: @blue;
+}
+

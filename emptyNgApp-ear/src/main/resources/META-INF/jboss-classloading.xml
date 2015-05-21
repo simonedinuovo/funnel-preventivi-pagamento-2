@@ -1,0 +1,3 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ 
+<classloading xmlns="urn:jboss:classloading:1.0" parent-domain="oneweb-core-lib" domain="emptyNgApp" export-all="ALL" import-all="true" parent-first="false"/>

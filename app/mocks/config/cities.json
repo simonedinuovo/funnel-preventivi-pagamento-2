@@ -1,0 +1,18 @@
+{
+        "result": {
+            "cities": [
+                {
+                    "value": "NY",
+                    "text": "New York"
+                },
+                {
+                    "value": "Rio",
+                    "text": "Rio"
+                },
+                {
+                    "value": "Tokyo",
+                    "text": "Tokyo"
+                }
+            ]
+        }
+    }

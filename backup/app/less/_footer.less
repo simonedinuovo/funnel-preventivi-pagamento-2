@@ -1,0 +1,41 @@
+footer {
+	font-family: @mainFont;
+	font-weight: 300;
+	font-size: 14px;
+	color: @black-30;
+	clear: both;
+	line-height: 1.2;
+
+	a {
+		font-weight: 400;
+	}
+
+	p {
+		margin-bottom: 1em;
+	}
+
+	.modalita_pagamento {
+		background-color: @grey;
+		text-align: center;
+		color: #aeaeae;
+		padding: 8px 0;
+		border-top: 2px solid darken(@grey, 5%);
+		margin-bottom: 2em;
+		text-transform: uppercase;
+		font-style: 13px;
+
+		img {
+			display: inline;
+			padding: 0;
+			margin: 0;
+			border: 0;
+		}
+
+		@media screen and (max-width: 768px) {
+			a {
+				display: block;
+				border: 0;
+			}
+		}
+	}
+}

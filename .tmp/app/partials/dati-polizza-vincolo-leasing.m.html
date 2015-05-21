@@ -1,0 +1,259 @@
+<fieldset>
+    <h3 class="border"><span>Vincolo o leasing</span></h3>
+    <div class="row">
+        <div class="col-sm-4"><label>Leasing?</label></div>
+        <div class="col-sm-5">
+            <label class="radio radio-inline">
+                <input id="leasing_S" name="leasing" ng-model="userForm.leasing" aria-label="leasing" type="radio" value="S" tabindex="0">
+                <span class="label">S&igrave;</span>
+            </label>
+            <label class="radio radio-inline">
+                <input id="leasing_N" name="leasing" ng-model="userForm.leasing" aria-label="leasing" type="radio" value="N"  tabindex="0">
+                <span class="label">No</span>
+            </label>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-4"><label>Vincolo?</label></div>
+        <div class="col-sm-5">
+            <label class="radio radio-inline">
+                <input id="vincolo_S" name="vincolo" ng-model="userForm.vincolo" aria-label="vincolo" type="radio" value="S" tabindex="0">
+                <span class="label">S&igrave;</span>
+            </label>
+            <label class="radio radio-inline">
+                <input id="vincolo_N" name="vincolo" ng-model="userForm.vincolo" aria-label="vincolo" type="radio" value="N"  tabindex="0">
+                <span class="label">No</span>
+            </label>
+        </div>
+    </div>
+
+    <fieldset ng-show="userForm.leasing == 'S' || userForm.vincolo == 'S' ">
+        <h3 class="border"><span>Informazioni sulla società vincolataria</span></h3>
+
+        <div class="row">
+            <div class="col-sm-12">
+
+                <div class="row">
+                    <div class="col-sm-2"><label>Società vincolataria</label></div>
+                    <div class="col-sm-4">
+                        <div class="input-group">
+                            <input type="text" id="societa-vincolataria" name="societa-vincolataria" class="required lettersonly form-control" placeholder="Azienda S.r.l." tabindex="0">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-sm-2"><label>Seleziona una società</label></div>
+                    <div class="col-sm-4">
+                        <select id="societa-select"
+                                name="societa-select"
+                                ng-model="userForm.leasingBond.society"
+                                ng-options="item.key for item in societyValues track by item.value"
+                                tabindex="0"
+                                class="required"
+                                data-placeholder="Seleziona">
+                        </select>
+                    </div>
+                    <!--
+                    <option value></option>
+                    <option value="societa1">Società 001</option>
+                    <option value="societa2">Società 002</option>
+                    <option value="societa3">Società 003</option>
+                    <option value="societa4">Società 004</option>
+                    <option value="societa5">Società 005</option>
+                    <option value="societa6">Società 006</option>
+                    -->
+                </div>
+
+                <div class="row" ng-if="userForm.leasingBond.society.value == 'nf'">
+                    <!--<div class="col-sm-8">
+                        <div class="alert alert-danger" role="alert">
+                            <h5 class="alert-headline"><span class="glyphicon glyphicon-error"></span> Attenzione</h5>
+                            <p>La ricerca della società di vincolo non ha dato alcun risultato in base alla parola chiave da te inserita. Cambia la parola chiave ed effettua una nuova ricerca, altrimenti usa l'opzione "Società non trovata" per inserire i dati della società di vincolo.</p>
+                        </div>
+                    </div>-->
+
+
+                <div class="row">
+                    <div class="col-sm-2"><label>Data di scadenza del vincolo</label></div>
+                    <div class="col-sm-4">
+                        <div class="input-group full-width-col">
+                            <input type="text" id="data-scadenza" name="data-scadenza" class="form-control input_date required dateFormat" placeholder="GG/MM/AAAA" data-datepicker data-date="01/04/2014" data-date-format="dd/mm/yyyy" data-dates-disabled="" data-date-days-of-week-disabled=""/>
+                            <div class="datepicker-opener"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-sm-2"><label>Struttura societaria</label></div>
+                    <div class="col-sm-4">
+                        <div class="input-group">
+                            <input type="text" id="societa-struttura" name="societa-struttura" ng-model="userForm.leasingBond.structure" class="required lettersonly form-control" tabindex="0">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-sm-2"><label>Partita Iva</label></div>
+                    <div class="col-sm-4">
+                        <div class="input-group">
+                            <input type="text" id="societa-partita-iva" name="societa-partita-iva" ng-model="userForm.leasingBond.VAT" class="required lettersonly form-control" tabindex="0">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-sm-2"><label>Codice Postale</label></div>
+                    <div class="col-sm-4">
+                        <div class="input-group">
+                            <input type="text" placeholder="CAP" id="societa-codice-postale" name="societa-codice-postale" ng-model="userForm.leasingBond.CAP" class="required lettersonly form-control" tabindex="0">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- SELECT: Località -->
+
+                <div class="row">
+
+                    <div class="col-sm-2">
+                        <label>Comune di nascita</label>
+                    </div>
+
+                    <div class="col-sm-4">
+                        <select data-placeholder="Scegli la localit&agrave;" id="" name="" class="required" tabindex="0" required>
+                            <option value></option>
+                            <option value="5432">ROMA</option>
+                            <option value="22431">PANTANO BORGHESE</option>
+                            <option value="26695">CESANO STAZIONE</option>
+                            <option value="26696">CORDOLLE</option>
+                        </select>
+                    </div>
+
+
+                </div>
+
+                <!-- INPUT : Indirizzo -->
+
+                <div class="row">
+                    <div class="col-sm-2">
+                        <label>Indirizzo</label>
+                    </div>
+                    <div class="col-sm-10">
+                        <div class="row narrow">
+
+
+                            <!-- SELECT: Via -->
+
+                            <div class="col-sm-2">
+                                <select id="address_type" name="address_type" tabindex="0" class="required">
+                                    <option value="0069">Alzaia</option>
+                                    <option value="0001">Baglio</option>
+                                    <option value="0002">Bastioni</option>
+                                    <option value="0003">Borgata</option>
+                                    <option value="0070">Borgo</option>
+                                    <option value="0007">Cala</option>
+                                    <option value="0008">Calle</option>
+                                    <option value="0009">Camin</option>
+                                    <option value="0010">Campiello</option>
+                                    <option value="0011">Campo</option>
+                                    <option value="0012">Carruggio</option>
+                                    <option value="0004">Cascina</option>
+                                    <option value="0005">Cascine</option>
+                                    <option value="0013">Circonvallazione</option>
+                                    <option value="0014">Contrada</option>
+                                    <option value="0015">Corso</option>
+                                    <option value="0016">Corte</option>
+                                    <option value="0017">Cortile</option>
+                                    <option value="0018">Cupa</option>
+                                    <option value="0021">Darsena</option>
+                                    <option value="0019">Diramazione</option>
+                                    <option value="0020">Discesa</option>
+                                    <option value="0022">Fondaco</option>
+                                    <option value="0023">Fondamenta</option>
+                                    <option value="0024">Fondo</option>
+                                    <option value="0072">Fontanelle</option>
+                                    <option value="0025">Frazione</option>
+                                    <option value="0026">Galleria</option>
+                                    <option value="0027">Gradini</option>
+                                    <option value="0028">Isola</option>
+                                    <option value="0029">Largo</option>
+                                    <option value="0030">Lido</option>
+                                    <option value="0034">Localita</option>
+                                    <option value="0036">Lungo</option>
+                                    <option value="0035">Lungoargine</option>
+                                    <option value="0031">Lungofiume</option>
+                                    <option value="0032">Lungolago</option>
+                                    <option value="0033">Lungomare</option>
+                                    <option value="0073">Nucleo</option>
+                                    <option value="0040">Palazzo</option>
+                                    <option value="0041">Parco</option>
+                                    <option value="0042">Passaggio</option>
+                                    <option value="0039">Piazza</option>
+                                    <option value="0037">Piazzale</option>
+                                    <option value="0038">Piazzetta</option>
+                                    <option value="0043">Podere</option>
+                                    <option value="0044">Porto</option>
+                                    <option value="0006">Presso</option>
+                                    <option value="0045">Prolungamento</option>
+                                    <option value="0046">Quartiere</option>
+                                    <option value="0047">Ramo</option>
+                                    <option value="0048">Regione</option>
+                                    <option value="0049">Residenza</option>
+                                    <option value="0050">Rione</option>
+                                    <option value="0051">Ripa</option>
+                                    <option value="0052">Riviera</option>
+                                    <option value="0054">Salita</option>
+                                    <option value="0055">Sestiere</option>
+                                    <option value="0056">Spalto</option>
+                                    <option value="0053">Strada</option>
+                                    <option value="0057">Supportico</option>
+                                    <option value="0058">Tenuta</option>
+                                    <option value="0059">Traversa</option>
+                                    <option value="0060">Vallone</option>
+                                    <option value="0061" selected>Via</option>
+                                    <option value="0064">Viale</option>
+                                    <option value="0063">Vico</option>
+                                    <option value="0062">Vicolo</option>
+                                    <option value="0066">Villaggio</option>
+                                    <option value="0068">Villaggio</option>
+                                    <option value="0065">Viuzzo</option>
+                                    <option value="0071">Vocabolo</option>
+                                    <option value="0067">Zona</option>
+                                </select>
+                            </div>
+
+
+                            <!-- INPUT: Indirizzo -->
+
+                            <div class="col-sm-5">
+                                <div class="input-group full-width-col">
+                                    <input type="text" id="indirizzo" name="indirizzo" class="required" data-autocomplete-via="app/partials/json/data-esempio-indirizzo.json" placeholder="es. Giosuè Carducci" tabindex="0">
+                                </div>
+                            </div>
+
+
+                            <!-- INPUT: Numero civico -->
+
+                            <div class="col-sm-2">
+                                <div class="input-group full-width-col">
+                                    <input type="text" class="required ncivico" id="n_civico" name="n_civico" placeholder="n.civico" tabindex="0">
+                                </div>
+                            </div>
+
+
+                            <!-- INPUT: Edificio -->
+
+                            <div class="col-sm-3">
+                                <div class="input-group full-width-col">
+                                    <input type="text" id="edificio" name="edificio" placeholder="Edificio(opzionale)" tabindex="0">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                </div>
+            </div>
+        </div>
+    </fieldset>
+
+</fieldset>

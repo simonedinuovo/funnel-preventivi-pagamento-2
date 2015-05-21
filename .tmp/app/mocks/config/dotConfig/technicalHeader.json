@@ -1,0 +1,15 @@
+{
+  "mock": false,
+  "user": {
+    "userCode": "0000",
+    "userGroup": "0000"
+  },
+  "origin": {
+    "channel": "7",
+    "applicationId": "0001"
+  },
+  "locale": {
+    "language": "IT",
+    "country": "IT"
+  }
+}

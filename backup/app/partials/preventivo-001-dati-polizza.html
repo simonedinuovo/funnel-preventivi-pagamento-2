@@ -1,0 +1,472 @@
+<header>
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-sm-2">
+				<a href="/" class="logo" target="_parent" tabindex="-1"></a>
+			</div>
+			<div class="col-sm-4">
+				<span class="subject">
+					Preventivo auto <strong>FIAT CY971ML</strong>
+				</span>
+			</div>
+			<div class="col-sm-4">
+				<div class="header_convention">
+					Preventivo con convenzione Croce Rossa Italiana
+				</div>
+			</div>
+			<div class="col-sm-2">
+				<div class="welcome">
+					<span class="welcome_label">Benvenuto</span>
+					<span class="welcome_user_name">Mario</span>
+				</div>
+			</div>
+		</div>
+	</div>
+</header>
+
+<section class="page">
+	<div class="container-fluid">
+
+		<div class="formWrapper">
+			<section class="form_step">
+				<ul class="steps ul_inline three">
+					<li class="current">
+						<span>1. Dati polizza</span>
+						<svg version="1.1" id="Livello_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+						viewBox="0 0 315 47" enable-background="new 0 0 315 47" preserveAspectRatio="none"><path fill="#004595" d="M293,47H2c-1.1,0-2-0.9-2-2V2c0-1.1,0.9-2,2-2h291l22,23.5L293,47z"/></svg>
+					</li>
+					<li>
+						<span>2. Contatti</span>
+						<svg version="1.1" id="Livello_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+						viewBox="0 0 315 47" enable-background="new 0 0 315 47" preserveAspectRatio="none"><polygon fill="#004595" points="293,47 0,47 22,23.5 0,0 293,0 315,23.5 "/></svg>
+					</li>
+					<li>
+						<span>3. Riepilogo Dati</span>
+						<svg version="1.1" id="Livello_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+						viewBox="0 0 315 47" enable-background="new 0 0 315 47" preserveAspectRatio="none"><path fill="#004595" d="M313,47H0l22-23.5L0,0h313c1.1,0,2,0.9,2,2v43C315,46.1,314.1,47,313,47z"/></svg>
+					</li>
+				</ul>
+			</section>
+
+			<section class="headmessage">
+				<div class="row">
+					<div class="col-sm-4">
+						<h6>prezzo per te</h6>
+						<b class="price">1.150,00 <span>€/anno</span></b>
+					</div>
+				</div>
+			</section>
+
+			<section class="form_body">
+				<form class="salva_preventivo_form custom_form" data-submit-path="ajax.php">
+					<fieldset>
+						<h3 class="border"><span>Dati personali</span></h3>
+						<div class="row">
+
+							<div class="col-sm-6">
+
+
+								<!-- INPUT: Nome -->
+
+								<div class="row">
+									<div class="col-sm-5">
+										<label>Nome</label>
+									</div>
+									<div class="col-sm-6">
+										<div class="input-group full-width-col">
+											<input type="text" id="nome" name="nome" class="form-control required lettersonly error" placeholder="Mario" data-cf="nome" tabindex="0">
+											<label id="nome-error" class="error" for="nome">Obbligatorio</label>
+										</div>
+									</div>
+								</div>
+
+
+								<!-- INPUT: Cognome -->
+
+								<div class="row">
+									<div class="col-sm-5">
+										<label>Cognome</label>
+									</div>
+									<div class="col-sm-6">
+										<div class="input-group full-width-col">
+											<input type="text" id="cognome" name="cognome" class="form-control required lettersonly" placeholder="Rossi" data-cf="cognome" tabindex="0">
+										</div>
+									</div>
+								</div>
+
+
+								<!-- INPUT: Data di nascita -->
+
+								<div class="row">
+									<div class="col-sm-5">
+										<label>Data di Nascita</label>
+									</div>
+									<div class="col-sm-6">
+										<div class="input-group full-width-col">
+											<input type="text" id="data-nascita" name="data-nascita" class="form-control input_date required dateFormat" placeholder="GG/MM/AAAA" data-datepicker data-date="01/04/2014" />
+											<div class="datepicker-opener"></div>
+										</div>
+									</div>
+								</div>
+
+
+								<!-- INPUT: Sesso intestatario "M" -->
+
+								<input type="hidden" id="sesso_intestatario" name="sesso_intestatario" data-cf="sesso" value="M">
+
+							</div>
+
+							<div class="col-sm-6">
+
+
+								<!-- INPUT: Comune di nascita -->
+
+								<div class="row">
+									<div class="col-sm-5 col-sm-offset-1">
+										<label>Comune di Nascita</label>
+									</div>
+									<div class="col-sm-6">
+										<div class="input-group full-width-col">
+											<input id="comunenascita" name="comunenascita" type="text" class="form-control required" data-autocomplete-comune="app/partials/json/data-esempio-comune.json" placeholder="Roma" data-cf="cittanascita" tabindex="0">
+										</div>
+									</div>
+								</div>
+
+
+								<!-- SELECT: Nucleo familiare -->
+
+								<div class="row">
+									<div class="col-sm-5 col-sm-offset-1">
+										<label class="lbl_select">Nucleo familiare</label>
+									</div>
+									<div class="col-sm-6">
+										<select data-placeholder="Seleziona" id="selNucleoFam" name="selNucleoFam" class="required" tabindex="0">
+											<option selected value></option>
+											<option value="3">Coppia con figli</option>
+											<option value="2">Coppia senza figli</option>
+											<option value="1">Una persona</option>
+											<option value="4">Altro</option>
+										</select>
+									</div>
+								</div>
+
+
+								<!-- INPUT: Codice fiscale -->
+
+								<div class="row">
+									<div class="col-sm-5 col-sm-offset-1">
+										<label>Codice fiscale</label>
+									</div>
+									<div class="col-sm-6">
+										<div class="input-group full-width-col">
+											<input type="text" class="required codicefiscale" id="cf" name="cf" placeholder="RSS MRA 60A01 H501 Q" data-warning="Il codice non coincide con i tuoi dati" tabindex="0">
+										</div>
+									</div>
+								</div>
+
+							</div>
+
+						</div>
+
+					</fieldset>
+					<fieldset class="indirizzo-residenza">
+						<h4 class="border"><span>Indirizzo di residenza</span></h4>
+
+
+						<!-- INPUT: Indirizzo -->
+
+						<div class="row">
+							<div class="col-sm-2">
+								<label>Indirizzo</label>
+							</div>
+							<div class="col-sm-10">
+								<div class="row narrow">
+
+
+									<!-- SELECT: Via -->
+
+									<div class="col-sm-2">
+										<select id="address_type" name="address_type" tabindex="0" class="required">
+											<option value="0069">Alzaia</option>
+											<option value="0001">Baglio</option>
+											<option value="0002">Bastioni</option>
+											<option value="0003">Borgata</option>
+											<option value="0070">Borgo</option>
+											<option value="0007">Cala</option>
+											<option value="0008">Calle</option>
+											<option value="0009">Camin</option>
+											<option value="0010">Campiello</option>
+											<option value="0011">Campo</option>
+											<option value="0012">Carruggio</option>
+											<option value="0004">Cascina</option>
+											<option value="0005">Cascine</option>
+											<option value="0013">Circonvallazione</option>
+											<option value="0014">Contrada</option>
+											<option value="0015">Corso</option>
+											<option value="0016">Corte</option>
+											<option value="0017">Cortile</option>
+											<option value="0018">Cupa</option>
+											<option value="0021">Darsena</option>
+											<option value="0019">Diramazione</option>
+											<option value="0020">Discesa</option>
+											<option value="0022">Fondaco</option>
+											<option value="0023">Fondamenta</option>
+											<option value="0024">Fondo</option>
+											<option value="0072">Fontanelle</option>
+											<option value="0025">Frazione</option>
+											<option value="0026">Galleria</option>
+											<option value="0027">Gradini</option>
+											<option value="0028">Isola</option>
+											<option value="0029">Largo</option>
+											<option value="0030">Lido</option>
+											<option value="0034">Localita</option>
+											<option value="0036">Lungo</option>
+											<option value="0035">Lungoargine</option>
+											<option value="0031">Lungofiume</option>
+											<option value="0032">Lungolago</option>
+											<option value="0033">Lungomare</option>
+											<option value="0073">Nucleo</option>
+											<option value="0040">Palazzo</option>
+											<option value="0041">Parco</option>
+											<option value="0042">Passaggio</option>
+											<option value="0039">Piazza</option>
+											<option value="0037">Piazzale</option>
+											<option value="0038">Piazzetta</option>
+											<option value="0043">Podere</option>
+											<option value="0044">Porto</option>
+											<option value="0006">Presso</option>
+											<option value="0045">Prolungamento</option>
+											<option value="0046">Quartiere</option>
+											<option value="0047">Ramo</option>
+											<option value="0048">Regione</option>
+											<option value="0049">Residenza</option>
+											<option value="0050">Rione</option>
+											<option value="0051">Ripa</option>
+											<option value="0052">Riviera</option>
+											<option value="0054">Salita</option>
+											<option value="0055">Sestiere</option>
+											<option value="0056">Spalto</option>
+											<option value="0053">Strada</option>
+											<option value="0057">Supportico</option>
+											<option value="0058">Tenuta</option>
+											<option value="0059">Traversa</option>
+											<option value="0060">Vallone</option>
+											<option value="0061" selected>Via</option>
+											<option value="0064">Viale</option>
+											<option value="0063">Vico</option>
+											<option value="0062">Vicolo</option>
+											<option value="0066">Villaggio</option>
+											<option value="0068">Villaggio</option>
+											<option value="0065">Viuzzo</option>
+											<option value="0071">Vocabolo</option>
+											<option value="0067">Zona</option>
+										</select>
+									</div>
+
+
+									<!-- INPUT: Indirizzo -->
+
+									<div class="col-sm-5">
+										<div class="input-group full-width-col">
+											<input type="text" id="indirizzo" name="indirizzo" class="required" data-autocomplete-via="app/partials/json/data-esempio-indirizzo.json" placeholder="es. Giosuè Carducci" tabindex="0">
+										</div>
+									</div>
+
+
+									<!-- INPUT: Numero civico -->
+
+									<div class="col-sm-2">
+										<div class="input-group full-width-col">
+											<input type="text" class="required ncivico" id="n_civico" name="n_civico" placeholder="n.civico" tabindex="0">
+										</div>
+									</div>
+
+
+									<!-- INPUT: Edificio -->
+
+									<div class="col-sm-3">
+										<div class="input-group full-width-col">
+											<input type="text" id="edificio" name="edificio" placeholder="Edificio(opzionale)" tabindex="0">
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+
+
+						<!-- SELECT: Località -->
+
+						<div class="row">
+
+							<div class="col-sm-2">
+								<label>Località</label>
+							</div>
+
+							<div class="col-sm-10">
+								<div class="row narrow">
+									<div class="col-sm-12 elastic">
+										<span class="form_read_only">Roma</span>
+										<div class="selectwrap">
+											<select data-placeholder="Scegli la localit&agrave;" id="selHamlet" name="selHamlet" class="required" tabindex="0">
+												<option value></option>
+												<option value="5432">ROMA</option>
+												<option value="22431">PANTANO BORGHESE</option>
+												<option value="26695">CESANO STAZIONE</option>
+												<option value="26696">CORDOLLE</option>
+											</select>
+										</div>
+										<div class="input-group">
+											<input type="text" placeholder="CAP" class="required cap" id="cap" name="cap" tabindex="0">
+										</div>
+									</div>
+
+								</div>
+							</div>
+
+
+						</div>
+
+					</fieldset>
+					<fieldset>
+						<h4 class="border"><span>Altro</span></h4>
+
+						<div class="row">
+							<div class="col-sm-4"><label>Ci sono pi&ugrave; intestatari del veicolo?</label></div>
+							<div class="col-sm-5">
+								<label class="radio radio-inline">
+									<input id="piu_intestatari1" name="piu_intestatari" aria-label="piu_intestatari" type="radio" value="S" tabindex="0" data-show="#radio_coincide">
+									<span class="label">S&igrave;</span>
+								</label>
+								<label class="radio radio-inline">
+									<input id="piu_intestatari2" name="piu_intestatari" aria-label="piu_intestatari" type="radio" value="N" rel="#radio_coincide" tabindex="0" data-hide="#radio_coincide" checked="checked">
+									<span class="label">No</span>
+								</label>
+							</div>
+						</div>
+
+						<div class="row hidden-field" id="radio_coincide">
+							<div class="col-sm-4"><label>Il contraente coincide con l'intestatario?</label></div>
+							<div class="col-sm-5">
+								<label class="radio radio-inline">
+									<input id="intestatario_coincide1" name="intestatario_coincide" aria-label="intestatario_coincide" type="radio" value="S" tabindex="0" checked="checked">
+									<span class="label">S&igrave;</span>
+								</label>
+								<label class="radio radio-inline">
+									<input id="intestatario_coincide2" name="intestatario_coincide" aria-label="intestatario_coincide" type="radio" value="N" tabindex="0">
+									<span class="label">No</span>
+								</label>
+							</div>
+						</div>
+
+					</fieldset>
+					<fieldset>
+						<h3 class="border"><span>Informazioni Veicolo</span></h3>
+						<div class="row">
+							<div class="col-sm-4">
+								<label>Targa auto da assicurare</label>
+							</div>
+							<div class="col-sm-3">
+								<input type="text" class="required targaitaliana" id="targa" name="targa" placeholder="AA 123 BB" tabindex="0" >
+							</div>
+						</div>
+						<div class="row conditional">
+							<div class="col-sm-4"><label>Data di immatricolazione e acquisto coincidono?</label></div>
+							<div class="col-sm-3">
+								<label class="radio radio-inline">
+									<input id="data_imma1" name="data_imma" type="radio" value="S" tabindex="0" data-hide="#radio_data_acquisto" checked="checked">
+									<span class="label">S&igrave;</span>
+								</label>
+								<label class="radio radio-inline">
+									<input id="data_imma2" name="data_imma" type="radio" value="N" tabindex="0" data-show="#radio_data_acquisto">
+									<span class="label">No</span>
+								</label>
+							</div>
+						</div>
+						<div class="row narrow hidden-field" id="radio_data_acquisto">
+							<div class="col-sm-4">
+								<label class="lbl_select">Mese e anno di acquisto dell'auto</label>
+							</div>
+							<div class="col-sm-2">
+								<select data-placeholder="MM" id="meseAcquisto" name="meseAcquisto" class="required">
+									<option value></option>
+									<option value="01">01</option>
+									<option value="02">02</option>
+									<option value="03">03</option>
+									<option value="04">04</option>
+									<option value="05">05</option>
+									<option value="06">06</option>
+									<option value="07">07</option>
+									<option value="08">08</option>
+									<option value="09">09</option>
+									<option value="10">10</option>
+									<option value="11">11</option>
+									<option value="12">12</option>
+								</select>
+							</div>
+							<div class="col-sm-2">
+								<select data-placeholder="AAAA" id="annoAcquisto" name="annoAcquisto" class="required">
+									<option value></option>
+									<option value="2013">2013</option>
+									<option value="2012">2012</option>
+									<option value="2011">2011</option>
+									<option value="2010">2010</option>
+									<option value="2009">2009</option>
+									<option value="2008">2008</option>
+									<option value="2007">2007</option>
+								</select>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-sm-4"><label>Ci sono pi&ugrave; intestatari del veicolo?</label></div>
+							<div class="col-sm-5">
+								<label class="radio radio-inline">
+									<input id="piu_intestatari21" name="piu_intestatari2" type="radio" value="S" tabindex="0" data-show="#radio_coincide2">
+									<span class="label">S&igrave;</span>
+								</label>
+								<label class="radio radio-inline">
+									<input id="piu_intestatari22" name="piu_intestatari2" type="radio" value="N" tabindex="0" data-hide="#radio_coincide2" checked="checked">
+									<span class="label">No</span>
+								</label>
+							</div>
+						</div>
+
+						<div class="row hidden-field" id="radio_coincide2">
+							<div class="col-sm-4"><label>Il contraente coincide con l'intestatario?</label></div>
+							<div class="col-sm-5">
+								<label class="radio radio-inline">
+									<input id="intestatario_coincide21" name="intestatario_coincide2" type="radio" value="S" tabindex="0" checked="checked">
+									<span class="label">S&igrave;</span>
+								</label>
+								<label class="radio radio-inline">
+									<input id="intestatario_coincide22" name="intestatario_coincide2" type="radio" value="N" tabindex="0">
+									<span class="label">No</span>
+								</label>
+							</div>
+						</div>
+
+					</fieldset>
+					<div class="stickPoint">
+						<div class="form_controls sticker" >
+							<div class="wrap">
+								<div class="row">
+									<div class="col-sm-3">
+										<button class="btn btn-primary btn-submit btn-allcaps indietro inactive" type="button" tabindex="-1"><span>&#8249;</span> Indietro</button>
+
+									</div>
+									<div class="col-sm-3 col-sm-offset-6">
+										<button onclick="location.hash='/contatti';" class="btn btn-primary btn-submit btn-allcaps" type="submit" tabindex="0">Prosegui <span>&#8250;</span></button>
+
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</form>
+			</section>
+
+		</div>
+	</div>
+</section>
+
+<script src="app/partials/js/main.js"></script>
+<script src="app/partials/js/salvataggio-preventivo-datipolizza.js"></script>

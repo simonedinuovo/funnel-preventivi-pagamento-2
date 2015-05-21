@@ -1,0 +1,40 @@
+{
+	"mocks" : [
+		{
+			"method" : "GET",
+			"match" : "(.*\\/)?log4javascript\\.json",
+			"file" : "app/mocks/config/dotConfig/log4javascript.json",
+			"enabled" : true
+		},
+		{
+			"method" : "GET",
+			"match" : "(.*\\/)?technicalHeader\\.json",
+			"file" : "app/mocks/config/dotConfig/technicalHeader.json",
+			"enabled" : true
+		},
+		{
+			"method" : "GET",
+			"match" : "(.*\\/)?configServices\\.json",
+			"file" : "app/mocks/config/dotConfig/configServices.json",
+			"enabled" : true
+		},
+        {
+          "method" : "GET",
+          "match" : "(.*\\/)?SFQ\\.json",
+          "file" : "app/mocks/config/dotConfig/SFQ.json",
+          "enabled" : true
+        },
+        {
+            "method" : "POST",
+            "match" : "oneweb/ajax/aspro/az-direct-POC-it-cisl-dispatcher/extquotations/superfastquote",
+            "file" : "app/mocks/config/result.json",
+            "enabled" : true
+        },
+        {
+          "method" : "GET",
+          "match" : "rest-service/cities",
+          "file" : "app/mocks/config/cities.json",
+          "enabled" : true
+        }
+	]
+}

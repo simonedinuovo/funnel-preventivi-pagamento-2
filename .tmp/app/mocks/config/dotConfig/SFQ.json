@@ -1,0 +1,15 @@
+{
+    "onewebLinks": {
+		"quoteFlow": {"oneweb-link" : {"guid":"AZDE-XML:CONTENT:fadb213f-f57f-4b6f-ae53-0e3f28c434ff"}}
+	},
+	"cislParameters":{
+		"mock":true,
+		"error":false
+	},
+	"socialAppId":{
+		"facebook": "1421822984779708"
+	},
+	"quoteFlow":{
+		"useMashup": false
+	}
+}

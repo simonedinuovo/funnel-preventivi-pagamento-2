@@ -1,0 +1,876 @@
+<header>
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-sm-2">
+				<a href="/" class="logo" target="_parent" tabindex="-1"></a>
+			</div>
+			<div class="col-sm-4">
+				<span class="subject">
+					Preventivo auto <strong>FIAT CY971ML</strong>
+				</span>
+			</div>
+			<div class="col-sm-4">
+				<div class="header_convention">
+					Preventivo con convenzione Croce Rossa Italiana
+				</div>
+			</div>
+			<div class="col-sm-2">
+				<div class="welcome">
+					<span class="welcome_label">Benvenuto</span>
+					<span class="welcome_user_name">Mario</span>
+				</div>
+			</div>
+		</div>
+	</div>
+</header>
+
+<section class="page">
+	<div class="container-fluid">
+
+		<div class="formWrapper">
+			<section class="form_step">
+				<ul class="steps ul_inline three">
+					<li class="current">
+						<span>1. Dati polizza</span>
+						<svg version="1.1" id="Livello_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+						viewBox="0 0 315 47" enable-background="new 0 0 315 47" preserveAspectRatio="none"><path fill="#004595" d="M293,47H2c-1.1,0-2-0.9-2-2V2c0-1.1,0.9-2,2-2h291l22,23.5L293,47z"/></svg>
+					</li>
+					<li>
+						<span>2. Contatti</span>
+						<svg version="1.1" id="Livello_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+						viewBox="0 0 315 47" enable-background="new 0 0 315 47" preserveAspectRatio="none"><polygon fill="#004595" points="293,47 0,47 22,23.5 0,0 293,0 315,23.5 "/></svg>
+					</li>
+					<li>
+						<span>3. Riepilogo Dati</span>
+						<svg version="1.1" id="Livello_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+						viewBox="0 0 315 47" enable-background="new 0 0 315 47" preserveAspectRatio="none"><path fill="#004595" d="M313,47H0l22-23.5L0,0h313c1.1,0,2,0.9,2,2v43C315,46.1,314.1,47,313,47z"/></svg>
+					</li>
+				</ul>
+			</section>
+
+			<section class="headmessage">
+				<div class="row">
+					<div class="col-sm-4">
+						<h6>prezzo per te</h6>
+						<b class="price">1.150,00 <span>€/anno</span></b>
+					</div>
+				</div>
+			</section>
+
+			<section class="form_body">
+				<form class="salva_preventivo_form custom_form" name="personalData"  real-time-validate="false" novalidate>
+					<fieldset>
+						<h3 class="border"><span>Dati personali</span></h3>
+						<div class="row">
+
+							<div class="col-sm-6">
+
+
+								<!-- INPUT: Nome -->
+
+								<div class="row">
+									<div class="col-sm-5">
+										<label>Nome</label>
+									</div>
+									<div class="col-sm-6">
+										<div class="input-group full-width-col">
+
+                                            <input-text  name="nomeName"
+                                                         id="nome"
+                                                         bind-to="userForm.nome"
+                                                         required
+                                                         class="form-control lettersonly"
+                                                         validation-type="name"
+                                                         error-class="error"
+                                                         placeholder="Mario"
+                                                         default-error-class="ng-hide">
+                                                <validation key="required" error-message="errorMessage.generic.required"></validation>
+                                                <validation key="pattern" error-message="errorMessage.generic.invalid"></validation>
+                                                <input-layout>
+                                                <span class="input">
+                                                    <input>
+                                                </span>
+                                                </input-layout>
+                                                <error-layout>
+                                                    <label style="display: inline-block;" ng-repeat="(key, text) in validators" class="{{hasError(key)}}" ng-bind="text"></label>
+                                                </error-layout>
+
+                                            </input-text>
+                                            <div> Watching nome: <span>{{ userForm.nome  }}</span></div>
+                                            <!--<input type="text" id="nome" name="nome" class="form-control required lettersonly error"  data-cf="nome" tabindex="0">-->
+
+										</div>
+									</div>
+								</div>
+
+
+								<!-- INPUT: Cognome -->
+
+								<div class="row">
+									<div class="col-sm-5">
+										<label>Cognome</label>
+									</div>
+									<div class="col-sm-6">
+										<div class="input-group full-width-col">
+                                            <input-text  name="cognomeName"
+                                                         id="cognome"
+                                                         bind-to="userForm.cognome"
+                                                         required
+                                                         class="form-control required lettersonly"
+                                                         validation-type="name"
+                                                         error-class="error"
+                                                         placeholder="Rossi"
+                                                         default-error-class="ng-hide">
+                                                <validation key="required" error-message="errorMessage.generic.required"></validation>
+                                                <validation key="pattern" error-message="errorMessage.generic.invalid"></validation>
+                                                <input-layout>
+                                                <span class="input">
+                                                    <input>
+                                                </span>
+                                                </input-layout>
+                                                <error-layout>
+                                                    <label style="display: inline-block;" ng-repeat="(key, text) in validators" class="{{hasError(key)}}" ng-bind="text"></label>
+                                                </error-layout>
+
+                                            </input-text>
+                                            <div> Watching cognome: <span>{{ userForm.cognome  }}</span></div>
+											<!-- <input type="text" id="cognome" name="cognome" class="form-control required lettersonly" placeholder="Rossi" data-cf="cognome" tabindex="0"> -->
+										</div>
+									</div>
+								</div>
+
+
+								<!-- INPUT: Data di nascita -->
+
+								<div class="row">
+									<div class="col-sm-5">
+										<label>Data di Nascita</label>
+									</div>
+									<div class="col-sm-6">
+										<div class="input-group full-width-col">
+                                            <input-date   name="data-di-nascita"
+                                                          id="data-di-nascita"
+                                                          bind-to="datadinascita"
+                                                          required
+                                                          class="form-control input_date required dateFormat"
+                                                          validation-type="normal"
+                                                          placeholder="GG/MM/AAAA"
+                                                          data-lang="it-IT"
+                                                          error-class="error"
+                                                          data-date="01/04/2014"
+                                                          max="=-18y"
+                                                          data-datepicker
+                                                          default-error-class="ng-hide">
+                                                <validation key="required" error-message="errorMessage.birthdate.required"></validation>
+                                                <validation key="pattern" error-message="errorMessage.birthdate.invalid"></validation>
+                                                <validation key="invalidMax">SEI TYROPPO IN LA</validation>
+                                                <validation key="invalidMin">SEI TROPPO giovani</validation>
+                                                <input-layout>
+                                                <span class="input">
+                                                    <input>
+                                                    <div class="datepicker-opener"></div>
+                                                </span>
+                                                </input-layout>
+                                                <error-layout>
+                                                    <label style="display: inline-block;" ng-repeat="(key, text) in validators" class="{{hasError(key)}}" ng-bind="text"></label>
+                                                </error-layout>
+                                            </input-date>
+
+                                            <!-- <input type="text" id="data-nascita" name="data-nascita" ng-model="datadinascita" class="form-control input_date required dateFormat" placeholder="GG/MM/AAAA" data-datepicker data-date="01/04/2014" /> -->
+                                            <!-- <div class="datepicker-opener"></div> -->
+                                            <div> Watching datadinascita: <span>{{ userForm.datadinascita  }}</span></div>
+										</div>
+									</div>
+								</div>
+
+
+								<!-- INPUT: Sesso intestatario "M" -->
+
+								<input type="hidden" id="sesso_intestatario" name="sesso_intestatario" ng-model="userForm.sesso" data-cf="sesso" value="">
+
+							</div>
+
+							<div class="col-sm-6">
+
+
+								<!-- INPUT: Comune di nascita -->
+
+								<div class="row">
+									<div class="col-sm-5 col-sm-offset-1">
+										<label>Comune di Nascita</label>
+									</div>
+									<div class="col-sm-6">
+										<div class="input-group full-width-col">
+                                            <input-text  name="comunenascitaName"
+                                                         id="comunenascita"
+                                                         bind-to="userForm.comunenascita"
+                                                         required
+                                                         class="form-control required lettersonly"
+                                                         data-autocomplete-comune="app/partials/json/data-esempio-comune.json"
+                                                         validation-type="name"
+                                                         error-class="error"
+                                                         default-error-class="ng-hide">
+                                                <validation key="required" error-message="errorMessage.generic.required"></validation>
+                                                <validation key="pattern" error-message="errorMessage.generic.invalid"></validation>
+                                                <input-layout>
+                                                <span class="input">
+                                                    <input>
+
+                                                </span>
+                                                </input-layout>
+                                                <error-layout>
+                                                    <label style="display: inline-block;" ng-repeat="(key, text) in validators" class="{{hasError(key)}}" ng-bind="text"></label>
+                                                </error-layout>
+
+                                            </input-text>
+                                            <input type="hidden" name="codCatasName" ng-model="userForm.codCatas" ng-value="null"/>
+                                            <div> Watching comune di nascita: <span ng-show="userForm"> {{ userForm.comunenascita }}</span></div>
+                                            <div> Watching codice catastale: <span ng-show="userForm">{{ userForm.codCatas }}</span></div>
+										</div>
+									</div>
+								</div>
+
+
+								<!-- SELECT: Nucleo familiare -->
+
+								<!-- <div class="row">
+									<div class="col-sm-5 col-sm-offset-1">
+										<label class="lbl_select">Nucleo familiare</label>
+									</div>
+									<div class="col-sm-6">
+										<select data-placeholder="Seleziona" id="selNucleoFam" name="selNucleoFam" class="required" tabindex="0">
+											<option selected value></option>
+											<option value="3">Coppia con figli</option>
+											<option value="2">Coppia senza figli</option>
+											<option value="1">Una persona</option>
+											<option value="4">Altro</option>
+										</select>
+									</div>
+								</div> -->
+
+
+								<!-- INPUT: Codice fiscale -->
+
+								<div class="row">
+									<div class="col-sm-5 col-sm-offset-1">
+										<label>Codice fiscale</label>
+									</div>
+									<div class="col-sm-6">
+										<div class="input-group full-width-col">
+
+                                            <input-text  name="CFName"
+                                                         id="CF"
+                                                         bind-to="userForm.CF"
+                                                         required
+                                                         placeholder="RSS MRA 60A01 H501 Q"
+                                                         complete-P-ID="controlCF"
+                                                         class="form-control"
+                                                         cf-name="userForm.nome"
+                                                         cf-surname="userForm.cognome"
+                                                         cf-sex="userForm.sesso"
+                                                         cf-cod-catas="userForm.codCatas"
+                                                         cf-birth-date="userForm.datadinascita"
+                                                         cf-birth-date-lang="it-IT"
+                                                         validation-type="codFisc"
+                                                         error-class="error"
+                                                         default-error-class="ng-hide">
+                                                <validation key="required" error-message="errorMessage.generic.required"></validation>
+                                                <validation key="pattern" error-message="errorMessage.generic.invalid"></validation>
+                                                <validation key="complexCheck" >Validazzione complessa fallita</validation>
+                                                <input-layout>
+                                                <span class="input">
+                                                    <input>
+                                                </span>
+                                                </input-layout>
+                                                <error-layout>
+                                                    <label style="display: inline-block;" ng-repeat="(key, text) in validators" class="{{hasError(key)}}" ng-bind="text"></label>
+                                                </error-layout>
+                                            </input-text>
+                                            <!-- <div> Watching CF: <span>{{ personalData.CF.$viewValue }}</span></div> -->
+                                            <div> Watching CF: <span>{{ userForm.CF  }}</span></div>
+											<!--<input type="text" class="required codicefiscale" id="cf" name="cf" placeholder="RSS MRA 60A01 H501 Q" data-warning="Il codice non coincide con i tuoi dati" tabindex="0">-->
+										</div>
+									</div>
+								</div>
+
+							</div>
+
+						</div>
+
+					</fieldset>
+					<!-- <fieldset class="indirizzo-residenza">
+						<h4 class="border"><span>Indirizzo di residenza</span></h4>
+
+
+						<!-- INPUT: Indirizzo >
+
+						<div class="row">
+							<div class="col-sm-2">
+								<label>Indirizzo</label>
+							</div>
+							<div class="col-sm-10">
+								<div class="row narrow">
+
+
+									<!-- SELECT: Via >
+
+									<div class="col-sm-2">
+										<select id="address_type" name="address_type" tabindex="0" class="required">
+											<option value="0069">Alzaia</option>
+											<option value="0001">Baglio</option>
+											<option value="0002">Bastioni</option>
+											<option value="0003">Borgata</option>
+											<option value="0070">Borgo</option>
+											<option value="0007">Cala</option>
+											<option value="0008">Calle</option>
+											<option value="0009">Camin</option>
+											<option value="0010">Campiello</option>
+											<option value="0011">Campo</option>
+											<option value="0012">Carruggio</option>
+											<option value="0004">Cascina</option>
+											<option value="0005">Cascine</option>
+											<option value="0013">Circonvallazione</option>
+											<option value="0014">Contrada</option>
+											<option value="0015">Corso</option>
+											<option value="0016">Corte</option>
+											<option value="0017">Cortile</option>
+											<option value="0018">Cupa</option>
+											<option value="0021">Darsena</option>
+											<option value="0019">Diramazione</option>
+											<option value="0020">Discesa</option>
+											<option value="0022">Fondaco</option>
+											<option value="0023">Fondamenta</option>
+											<option value="0024">Fondo</option>
+											<option value="0072">Fontanelle</option>
+											<option value="0025">Frazione</option>
+											<option value="0026">Galleria</option>
+											<option value="0027">Gradini</option>
+											<option value="0028">Isola</option>
+											<option value="0029">Largo</option>
+											<option value="0030">Lido</option>
+											<option value="0034">Localita</option>
+											<option value="0036">Lungo</option>
+											<option value="0035">Lungoargine</option>
+											<option value="0031">Lungofiume</option>
+											<option value="0032">Lungolago</option>
+											<option value="0033">Lungomare</option>
+											<option value="0073">Nucleo</option>
+											<option value="0040">Palazzo</option>
+											<option value="0041">Parco</option>
+											<option value="0042">Passaggio</option>
+											<option value="0039">Piazza</option>
+											<option value="0037">Piazzale</option>
+											<option value="0038">Piazzetta</option>
+											<option value="0043">Podere</option>
+											<option value="0044">Porto</option>
+											<option value="0006">Presso</option>
+											<option value="0045">Prolungamento</option>
+											<option value="0046">Quartiere</option>
+											<option value="0047">Ramo</option>
+											<option value="0048">Regione</option>
+											<option value="0049">Residenza</option>
+											<option value="0050">Rione</option>
+											<option value="0051">Ripa</option>
+											<option value="0052">Riviera</option>
+											<option value="0054">Salita</option>
+											<option value="0055">Sestiere</option>
+											<option value="0056">Spalto</option>
+											<option value="0053">Strada</option>
+											<option value="0057">Supportico</option>
+											<option value="0058">Tenuta</option>
+											<option value="0059">Traversa</option>
+											<option value="0060">Vallone</option>
+											<option value="0061" selected>Via</option>
+											<option value="0064">Viale</option>
+											<option value="0063">Vico</option>
+											<option value="0062">Vicolo</option>
+											<option value="0066">Villaggio</option>
+											<option value="0068">Villaggio</option>
+											<option value="0065">Viuzzo</option>
+											<option value="0071">Vocabolo</option>
+											<option value="0067">Zona</option>
+										</select>
+									</div>
+
+
+									<!-- INPUT: Indirizzo >
+
+									<div class="col-sm-5">
+										<div class="input-group full-width-col">
+											<input type="text" id="indirizzo" name="indirizzo" class="required" data-autocomplete-via="app/partials/json/data-esempio-indirizzo.json" placeholder="es. Giosuè Carducci" tabindex="0">
+										</div>
+									</div>
+
+
+									<!-- INPUT: Numero civico >
+
+									<div class="col-sm-2">
+										<div class="input-group full-width-col">
+											<input type="text" class="required ncivico" id="n_civico" name="n_civico" placeholder="n.civico" tabindex="0">
+										</div>
+									</div>
+
+
+									<!-- INPUT: Edificio >
+
+									<div class="col-sm-3">
+										<div class="input-group full-width-col">
+											<input type="text" id="edificio" name="edificio" placeholder="Edificio(opzionale)" tabindex="0">
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+
+
+						<!-- SELECT: Località >
+
+						<div class="row">
+
+							<div class="col-sm-2">
+								<label>Località</label>
+							</div>
+
+							<div class="col-sm-10">
+								<div class="row narrow">
+									<div class="col-sm-12 elastic">
+										<span class="form_read_only">Roma</span>
+										<div class="selectwrap">
+											<select data-placeholder="Scegli la localit&agrave;" id="selHamlet" name="selHamlet" class="required" tabindex="0">
+												<option value></option>
+												<option value="5432">ROMA</option>
+												<option value="22431">PANTANO BORGHESE</option>
+												<option value="26695">CESANO STAZIONE</option>
+												<option value="26696">CORDOLLE</option>
+											</select>
+										</div>
+										<div class="input-group">
+											<input type="text" placeholder="CAP" class="required cap" id="cap" name="cap" tabindex="0">
+										</div>
+									</div>
+
+								</div>
+							</div>
+
+
+						</div>
+
+					</fieldset> -->
+                    <fieldset>
+                        <h3 class="border"><span>Ditta individuale</span></h3>
+                        <div class="row">
+                            <div class="col-sm-4"><label>Ditta individuale?</label></div>
+                            <div class="col-sm-5">
+                                <label class="radio radio-inline">
+                                    <input id="Ditta-individuale1" name="Ditta-individuale" ng-model="userForm.dittaIndividuale" aria-label="Ditta-individuale" type="radio" value="S" tabindex="0">
+                                    <span class="label">S&igrave;</span>
+                                </label>
+                                <label class="radio radio-inline">
+                                    <input id="Ditta-individuale2" name="Ditta-individuale" ng-model="userForm.dittaIndividuale" aria-label="Ditta-individuale" type="radio" value="N" rel="#sole_trader" tabindex="0">
+                                    <span class="label">No</span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="row" id="sole_trader" ng-show="userForm.dittaIndividuale == 'S' ">
+                            <div class="col-sm-4"><label>Partita Iva</label></div>
+                            <div class="col-sm-5">
+                                <div class="input-group full-width-col">
+                                    <input type="text" id="ditta-individuale-PI" ng-model="userForm.dittaIndividualePI" name="ditta-individuale-PI" class="required" tabindex="0">
+                                </div>
+                            </div>
+                        </div>
+                    </fieldset>
+
+                    <!-- guidatore aggiuntivo -->
+                    <fieldset>
+                        <h3 class="border"><span>Inserimento guidatore aggiuntivo</span></h3>
+                        <div class="row">
+                            <div class="col-sm-4"><label>Ci sono guidatori aggiuntivi?</label></div>
+                            <div class="col-sm-5">
+                                <label class="radio radio-inline">
+                                    <input id="guidatore_aggiuntivo_S" name="guidatore_aggiuntivo" ng-model="userForm.guidatoreAggiuntivo" aria-label="guidatore_aggiuntivo" type="radio" value="S" tabindex="0">
+                                    <span class="label">S&igrave;</span>
+                                </label>
+                                <label class="radio radio-inline">
+                                    <input id="guidatore_aggiuntivo_N" name="guidatore_aggiuntivo" ng-model="userForm.guidatoreAggiuntivo" aria-label="guidatore_aggiuntivo" type="radio" value="N"  tabindex="0">
+                                    <span class="label">No</span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <!-- guidatore aggiuntivo SuB -->
+                        <fieldset ng-show="userForm.guidatoreAggiuntivo == 'S'" >
+                            <h4 class="border"><span>Dati guidatore aggiuntivo</span></h4>
+
+                            <div class="row">
+                                <div class="col-sm-6">
+
+                                    <div class="row">
+                                        <div class="col-sm-5"><label>Sesso</label></div>
+                                        <div class="col-sm-6">
+                                            <label class="radio radio-inline">
+                                                <input id="sesso_intestatario_guidatore_aggiuntivo_S" name="sesso_intestatario_guidatore_aggiuntivo" aria-label="sesso_intestatario" type="radio" value="M" tabindex="0">
+                                                <span class="label">Maschio</span>
+                                            </label>
+                                            <label class="radio radio-inline">
+                                                <input id="sesso_intestatario__guidatore_aggiuntivo_N" name="sesso_intestatario_guidatore_aggiuntivo" aria-label="sesso_intestatario" type="radio" value="F" tabindex="0">
+                                                <span class="label">Femmina</span>
+                                            </label>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+
+                            <div class="row">
+
+                                <div class="col-sm-6">
+
+                                    <div class="row">
+                                        <div class="col-sm-5"><label>Nome</label></div>
+                                        <div class="col-sm-6">
+                                            <div class="input-group">
+                                                <input type="text" id="nome_guidatore_aggiuntivo" name="nome_guidatore_aggiuntivo" class="required lettersonly form-control" placeholder="Mario" data-cf="nome" tabindex="0">
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="col-sm-5"><label>Cognome</label></div>
+                                        <div class="col-sm-6">
+                                            <div class="input-group">
+                                                <input type="text" id="cognome_guidatore_aggiuntivo" name="cognome_guidatore_aggiuntivo" class="required lettersonly form-control" placeholder="Rossi" data-cf="cognome" tabindex="0">
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="col-sm-5"><label>Data di nascita</label></div>
+                                        <div class="col-sm-6">
+                                            <div class="input-group full-width-col">
+                                                <input type="text" id="data-nascita_guidatore_aggiuntivo" name="data-nascita_guidatore_aggiuntivo" class="form-control input_date required dateFormat" placeholder="GG/MM/AAAA" data-datepicker data-date="01/04/2014" data-date-format="dd/mm/yyyy" data-dates-disabled="" data-date-days-of-week-disabled=""/>
+                                                <div class="datepicker-opener"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                                <div class="col-sm-6">
+
+                                    <div class="row">
+                                        <div class="col-sm-5 col-sm-offset-1"><label>Codice fiscale</label></div>
+                                        <div class="col-sm-6">
+                                            <div class="input-group">
+                                                <input type="text" class="required codicefiscale form-control" id="cf_guidatore_aggiuntivo" name="cf_guidatore_aggiuntivo" placeholder="RSS MRA 60A01 H501 Q" data-warning="Il codice non coincide con i tuoi dati" tabindex="0">
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="row">
+
+                                        <div class="col-sm-5 col-sm-offset-1">
+                                            <label>Località</label>
+                                        </div>
+                                        <div class="col-sm-6">
+                                            <div class="input-group">
+                                                <select data-placeholder="Scegli la localit&agrave;" id="selHamlet" name="selHamlet" class="required" tabindex="0">
+                                                    <option value></option>
+                                                    <option value="5432">ROMA</option>
+                                                    <option value="22431">PANTANO BORGHESE</option>
+                                                    <option value="26695">CESANO STAZIONE</option>
+                                                    <option value="26696">CORDOLLE</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-10">
+                                            <div class="row narrow">
+                                                <div class="col-sm-12 elastic">
+                                                    <span class="form_read_only">Roma</span>
+                                                    <div class="selectwrap">
+                                                        <select data-placeholder="Scegli la localit&agrave;" id="selHamlet" name="selHamlet" class="required" tabindex="0">
+                                                            <option value></option>
+                                                            <option value="5432">ROMA</option>
+                                                            <option value="22431">PANTANO BORGHESE</option>
+                                                            <option value="26695">CESANO STAZIONE</option>
+                                                            <option value="26696">CORDOLLE</option>
+                                                        </select>
+                                                    </div>
+                                                    <div class="input-group">
+                                                        <input type="text" placeholder="CAP" class="required cap" id="cap" name="cap" tabindex="0">
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                        </div>
+
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+                        </fieldset>
+                        <!-- fine guidatore aggiuntivo SuB -->
+                    </fieldset>
+                    <!-- fine guidatore aggiuntivo -->
+
+                    <!-- contraente diverso dal destinatario -->
+                    <fieldset>
+                        <h3 class="border"><span>Contraente diverso dal destinatario</span></h3>
+
+                        <div class="row" ng-if="userForm.guidatoreAggiuntivo == 'N'">
+                            <div class="col-sm-4"><label>Il contraente è diverso dall'intestatario?</label></div>
+                            <div class="col-sm-5">
+                                <label class="radio radio-inline">
+                                    <input id="contraente_diverso_S" name="contraente_diverso" ng-model="userForm.contraenteDiverso" aria-label="contraente_diverso" type="radio" value="S" tabindex="0">
+                                    <span class="label">S&igrave;</span>
+                                </label>
+                                <label class="radio radio-inline">
+                                    <input id="contraente_diverso_N" name="contraente_diverso" ng-model="userForm.contraenteDiverso" aria-label="contraente_diverso" type="radio" value="N"  tabindex="0">
+                                    <span class="label">No</span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="row" ng-if="userForm.guidatoreAggiuntivo == 'S'">
+                            <div class="col-sm-2"><label>Il contraente coincide con</label></div>
+                            <div class="col-sm-10">
+                                <label class="radio radio-inline">
+                                    <input id="contraente_1" name="contraente" aria-label="contraente" ng-model="userForm.contraenteDiverso" type="radio" value="intestatario" tabindex="0">
+                                    <span class="label">Intestatario</span>
+                                </label>
+                                <label class="radio radio-inline">
+                                    <input id="contraente_2" name="contraente" aria-label="contraente" ng-model="userForm.contraenteDiverso" type="radio" value="intestatario aggiuntivo" tabindex="0">
+                                    <span class="label">Intestatario aggiuntivo</span>
+                                </label>
+                                <label class="radio radio-inline">
+                                    <input id="contraente_3" name="contraente" aria-label="contraente" ng-model="userForm.contraenteDiverso" type="radio" value="altro soggetto" tabindex="0">
+                                    <span class="label">Altro soggetto</span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <!-- contraente diverso dal destinatario SuB -->
+                        <fieldset ng-show="userForm.contraenteDiverso == 'S' || userForm.contraenteDiverso == 'altro soggetto'">
+                            <h4 class="border"><span>Dati anagrafici contraente della polizza</span></h4>
+                            <div class="row">
+                                <div class="col-sm-6">
+
+                                    <div class="row">
+                                        <div class="col-sm-5"><label>Nome</label></div>
+                                        <div class="col-sm-6">
+                                            <div class="input-group">
+                                                <input type="text" id="nome_contraente_diverso" name="nome_contraente_diverso" class="required lettersonly form-control" placeholder="Mario" data-cf="nome" tabindex="0">
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="col-sm-5"><label>Cognome</label></div>
+                                        <div class="col-sm-6">
+                                            <div class="input-group">
+                                                <input type="text" id="cognome_contraente_diverso" name="cognome_contraente_diverso" class="required lettersonly form-control" placeholder="Rossi" data-cf="cognome" tabindex="0">
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="col-sm-5"><label>Data di nascita del contraente</label></div>
+                                        <div class="col-sm-6">
+                                            <div class="input-group full-width-col">
+                                                <input type="text" id="data-nascita_contraente_diverso" name="data-nascita_contraente_diverso" class="form-control input_date required dateFormat" placeholder="GG/MM/AAAA" data-datepicker data-date="01/04/2014" data-date-format="dd/mm/yyyy" data-dates-disabled="" data-date-days-of-week-disabled=""/>
+                                                <div class="datepicker-opener"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                                <div class="col-sm-6">
+
+                                    <div class="row">
+                                        <div class="col-sm-5 col-sm-offset-1"><label>Stato di cittadinanza del contraente</label></div>
+                                        <div class="col-sm-6">
+                                            <select id="nazione_contraente_diverso" name="nazione_contraente_diverso" tabindex="0" class="required">
+                                                <option value="italia" selected>Italia</option>
+                                                <option value="francia">Francia</option>
+                                                <option value="germania">Germania</option>
+                                                <option value="spagna">Spagna</option>
+                                            </select>
+                                        </div>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="col-sm-5 col-sm-offset-1"><label>Codice fiscale</label></div>
+                                        <div class="col-sm-6">
+                                            <div class="input-group">
+                                                <input type="text" class="required codicefiscale form-control" id="cf_contraente_diverso" name="cf_contraente_diverso" placeholder="RSS MRA 60A01 H501 Q" data-warning="Il codice non coincide con i tuoi dati" tabindex="0">
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <div class="row">
+                                        <div class="col-sm-5">
+                                            <label>CAP</label>
+                                        </div>
+                                        <div class="col-sm-6">
+                                            <div class="input-group">
+                                                <input type="text" placeholder="es. 00118" class="required cap focus-out-show form-control" id="cap_contraente_diverso" name="cap_contraente_diverso" tabindex="0" >
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </fieldset>
+                        <!-- fine contraente diverso dal destinatario SuB -->
+                    </fieldset>
+                    <!-- fine contraente diverso dal destinatario -->
+
+					<!--<fieldset>
+						<h4 class="border"><span>Altro</span></h4>
+
+						<div class="row">
+							<div class="col-sm-4"><label>Ci sono pi&ugrave; intestatari del veicolo?</label></div>
+							<div class="col-sm-5">
+								<label class="radio radio-inline">
+									<input id="piu_intestatari1" name="piu_intestatari" aria-label="piu_intestatari" type="radio" value="S" tabindex="0" data-show="#radio_coincide">
+									<span class="label">S&igrave;</span>
+								</label>
+								<label class="radio radio-inline">
+									<input id="piu_intestatari2" name="piu_intestatari" aria-label="piu_intestatari" type="radio" value="N" rel="#radio_coincide" tabindex="0" data-hide="#radio_coincide" checked="checked">
+									<span class="label">No</span>
+								</label>
+							</div>
+						</div>
+
+						<div class="row hidden-field" id="radio_coincide">
+							<div class="col-sm-4"><label>Il contraente coincide con l'intestatario?</label></div>
+							<div class="col-sm-5">
+								<label class="radio radio-inline">
+									<input id="intestatario_coincide1" name="intestatario_coincide" aria-label="intestatario_coincide" type="radio" value="S" tabindex="0" checked="checked">
+									<span class="label">S&igrave;</span>
+								</label>
+								<label class="radio radio-inline">
+									<input id="intestatario_coincide2" name="intestatario_coincide" aria-label="intestatario_coincide" type="radio" value="N" tabindex="0">
+									<span class="label">No</span>
+								</label>
+							</div>
+						</div>
+
+					</fieldset>-->
+					<fieldset>
+						<h3 class="border"><span>Vincolo o leasing</span></h3>
+                        <div class="row">
+                            <div class="col-sm-4"><label>Leasing?</label></div>
+                            <div class="col-sm-5">
+                                <label class="radio radio-inline">
+                                    <input id="leasing_S" name="leasing" ng-model="userForm.leasing" aria-label="leasing" type="radio" value="S" tabindex="0">
+                                    <span class="label">S&igrave;</span>
+                                </label>
+                                <label class="radio radio-inline">
+                                    <input id="leasing_N" name="leasing" ng-model="userForm.leasing" aria-label="leasing" type="radio" value="N"  tabindex="0">
+                                    <span class="label">No</span>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-4"><label>Vincolo?</label></div>
+                            <div class="col-sm-5">
+                                <label class="radio radio-inline">
+                                    <input id="vincolo_S" name="vincolo" ng-model="userForm.vincolo" aria-label="vincolo" type="radio" value="S" tabindex="0">
+                                    <span class="label">S&igrave;</span>
+                                </label>
+                                <label class="radio radio-inline">
+                                    <input id="vincolo_N" name="vincolo" ng-model="userForm.vincolo" aria-label="vincolo" type="radio" value="N"  tabindex="0">
+                                    <span class="label">No</span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <fieldset ng-show="userForm.leasing == 'S' || userForm.vincolo == 'S' ">
+                            <h3 class="border"><span>Informazioni sulla società vincolataria</span></h3>
+
+                            <div class="row">
+                                <div class="col-sm-12">
+
+                                    <div class="row">
+                                        <div class="col-sm-2"><label>Società vincolataria</label></div>
+                                        <div class="col-sm-4">
+                                            <div class="input-group">
+                                                <input type="text" id="societa-vincolataria" name="societa-vincolataria" class="required lettersonly form-control" placeholder="Azienda S.r.l." tabindex="0">
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="col-sm-2"><label>Seleziona una società</label></div>
+                                        <div class="col-sm-4">
+                                            <select id="societa-select" name="societa-select" tabindex="0" class="required" data-placeholder="Seleziona">
+                                                <option value></option>
+                                                <option value="societa1">Società 001</option>
+                                                <option value="societa2">Società 002</option>
+                                                <option value="societa3">Società 003</option>
+                                                <option value="societa4">Società 004</option>
+                                                <option value="societa5">Società 005</option>
+                                                <option value="societa6">Società 006</option>
+                                            </select>
+                                        </div>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="col-sm-8">
+                                            <div class="alert alert-danger" role="alert">
+                                                <h5 class="alert-headline"><span class="glyphicon glyphicon-error"></span> Attenzione</h5>
+                                                <p>La ricerca della società di vincolo non ha dato alcun risultato in base alla parola chiave da te inserita. Cambia la parola chiave ed effettua una nuova ricerca, altrimenti usa l'opzione "Società non trovata" per inserire i dati della società di vincolo.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="col-sm-2"><label>Data di scadenza del vincolo</label></div>
+                                        <div class="col-sm-4">
+                                            <div class="input-group full-width-col">
+                                                <input type="text" id="data-scadenza" name="data-scadenza" class="form-control input_date required dateFormat" placeholder="GG/MM/AAAA" data-datepicker data-date="01/04/2014" data-date-format="dd/mm/yyyy" data-dates-disabled="" data-date-days-of-week-disabled=""/>
+                                                <div class="datepicker-opener"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </fieldset>
+
+					</fieldset>
+					<div class="stickPoint">
+						<div class="form_controls sticker" >
+							<div class="wrap">
+								<div class="row">
+									<div class="col-sm-3">
+										<button class="btn btn-primary btn-submit btn-allcaps indietro inactive" type="button" tabindex="-1"><span>&#8249;</span> Indietro</button>
+
+									</div>
+									<div class="col-sm-3 col-sm-offset-6">
+										<button ng-click="prosegui(this)" class="btn btn-primary btn-submit btn-allcaps" type="submit" tabindex="0">Prosegui <span>&#8250;</span></button>
+
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</form>
+			</section>
+
+		</div>
+	</div>
+</section>
+
+<script src="app/partials/js/main.js"></script>
+<script src="app/partials/js/salvataggio-preventivo-datipolizza.js"></script>

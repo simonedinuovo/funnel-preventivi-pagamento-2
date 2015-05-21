@@ -1,0 +1,179 @@
+<h1><code ng:non-bindable="">inputPlate</code>
+<div><span class="hint">directive in module <code ng:non-bindable="">azDirectCore.validationModule</code>
+</span>
+</div>
+</h1>
+<div><h2 id="description">Description</h2>
+<div class="description"><div class="azdirectcore-validationmodule-directive-page azdirectcore-validationmodule-directive-inputplate-page"><p>input directive, generates an input tag for plates with specific validation attached.</p>
+<div class="alert alert-warning">
+<strong>Note</strong> : The input custom directive must be included into a parent &#60;form&#62;, otherwise will not work as
+expected.
+</div>
+
+<h3 id="description_how-use-it">How use it</h3>
+<p>When you want include a input tag for plate validation , you can simply include the <code>InputPlate</code> directive and edit
+in the <a href="https://docs.angularjs.org/api/ng/directive/ngModelOptions"><code>validationFactory</code></a> the validation for your country ( normal, <strike>special</strike>, bike, moped )
+and then use it performing the validation rules in the attribute <strong>validationType</strong>.</p>
+<div class="alert alert-warning">
+<strong>Remember</strong> : the validationFactory must be verified according with you country plate rules. You can add a regular expression,
+or make more complex validation by calling a service. See more questions in the <a href="#/api/azDirectCore.validationModule.validationFactory#validation"><code>validationFactory.validation</code></a>
+</div>
+
+<p> <pre class="prettyprint linenums">
+ ...
+ holland : {
+         config : {
+             'maxlength': '7',
+             'placeholder': "49TPLT"
+             'ng-pattern' : "...{PATTERN}..."
+         },
+         validation : { // array of custom validation
+
+             "formatPlate": function (value) {
+                 // Custom synchronous
+                 return true;
+             }
+         },
+         asyncValidation : { // array of custom validation
+
+             "serviceValidation": function (value) {
+                 // Custom asynchronous
+                 return true;
+             }
+         }
+   }
+ ...
+ </pre>
+<p>As you can see, there is a new validation rules, and I just perform to <strong> inputPlate </strong> directive by attribute validationType</p>
+<p> <pre class="prettyprint linenums">
+ ...
+ &lt;input-plate    name="plate"
+                 id="plate"
+                 bind-to="plate.autoPlate"
+                 required
+                 class="ipt ipt_large input_car_plate form-control"
+                 validation-type="holland"
+                 error-class="error "
+                 default-error-class="ng-hide"&gt;
+     &lt;validation key="required" error-message="errorMessage.plate.required"&gt;&lt;/validation&gt;
+     &lt;validation key="pattern" error-message="errorMessage.plate.invalid"&gt;&lt;/validation&gt;
+     &lt;validation key="formatPlate" &gt; Invalid format Plate&lt;/validation&gt;
+     &lt;validation key="serviceValidation"&gt; Plate not valid for the service!&lt;/validation&gt;
+     &lt;label-content&gt;
+        &lt;label style="height: 13px;" for="form_auto_plate"&gt;Auto Plate&lt;/label&gt;
+     &lt;/label-content&gt;
+ &lt;/input-plate&gt;
+ ...
+ </pre>
+<h3 id="description_html-structure">HTML Structure</h3>
+<p>If we give a look into HTML rendered by above directive we can see what happens during the compile process.
+<em>Some attribute of input-plate has been moved from root tag to input tag ( name, id, class) and more over
+ also style, value and type would be moved if present from Root tag to input tag.
+</em>All content of <label-content> has been placed close to the input tag
+*The <validation> element has been elaborated in a list of error contents take from key error-message and wrapped
+ text and passed to ng-repeat element to print it as a list of &#60;div&#62; with functio HasError(key) on ng-hide
+ directive( this will able the DIV element to appear and desapper by error presence )</p>
+<p> <pre class="prettyprint linenums">
+ &lt;input-plate bind-to="toQuote.plate"
+              validation-type="holland"
+              error-class="error"
+              class="ng-scope"&gt;
+     &lt;div&gt;
+         &lt;div style="display: inline-block;"&gt;
+             &lt;label style="height: 13px;" for="plate"&gt;Auto Plate&lt;/label&gt;
+             &lt;input  required=""
+                     name="plate"
+                     id="plate"
+                     ng-model="plate.autoPlate"
+                     type="text"
+                     placeholder="49TPLT"
+                     maxlength="7"
+                     ng-pattern="...{PATTERN}..."
+                     class="ipt ipt_large input_car_plate form-control"&gt;
+         &lt;/div&gt;
+         &lt;div&gt;
+             &lt;!-- ngRepeat: (key, text) in validators --&gt;
+             &lt;div ng-repeat="(key, text) in validators" class="ng-hide" ng-bind="text"&gt;Plate is not valid.&lt;/div&gt;
+             &lt;!-- end ngRepeat: (key, text) in validators --&gt;
+             &lt;div ng-repeat="(key, text) in validators" class="ng-hide" ng-bind="text"&gt;Insert a plate.&lt;/div&gt;
+             &lt;!-- end ngRepeat: (key, text) in validators --&gt;
+             &lt;div ng-repeat="(key, text) in validators" class="ng-hide" ng-bind="text"&gt; Invalid format Plate&lt;/div&gt;
+             &lt;!-- end ngRepeat: (key, text) in validators --&gt;
+             &lt;div ng-repeat="(key, text) in validators" class="ng-hide" ng-bind="text"&gt; Plate not valid for the service!&lt;/div&gt;
+             &lt;!-- end ngRepeat: (key, text) in validators --&gt;
+        &lt;/div&gt;
+     &lt;/div&gt;
+ &lt;/input-plate&gt;
+</pre>
+<h3 id="description_validation">Validation</h3>
+<p>You can pass <code>&lt;validation&gt;</code> label to specify the key of properties to retrive in error-message attribute
+<pre class="prettyprint linenums">
+     &lt;validation key="required" error-message="errorMessage.plate.required"&gt;&lt;/validation&gt;
+   </pre>
+<p>or explicitly wrapped in the tag</p>
+<pre class="prettyprint linenums">
+      &lt;validation key=""&gt;No binded message&lt;/validation&gt;
+   </pre>
+<div class="alert alert-warning">
+<strong>Note</strong> : If you provide the error-message key the directive will ignore everything wrapped by the TAG
+
+<strong>Also</strong> : You cannot provide an expression as {{properties.name}} this will not evaluated by Angular
+because the directive is in compile life cycle, so any expression will be ignored.
+</div>
+
+<p>You can also disable the <code>RealTimeValidation</code> by adding a parameter to the parent &#60;form&#62;:</p>
+<pre><code class="lang-js">&lt;form action=&quot;&quot; real-time-validation=&quot;false&quot; &gt;&lt;/form&gt;
+</code></pre>
+<p>So the validation will be present only after the first submit of form.</p>
+</div></div>
+<h2 id="dependencies">Dependencies</h2>
+<ul class="dependencies"><li><code ng:non-bindable=""><a href="#/api/azDirectCore.validationModule.validationFactory">validationFactory</a></code>
+</li>
+<li><code ng:non-bindable=""><a href="#/api/azDirectCore.validationModule.validationLabel">validationLabel</a></code>
+</li>
+<li><code ng:non-bindable=""><a href="#/api/ng.$http">$http</a></code>
+</li>
+<li><code ng:non-bindable=""><a href="#/api/ng.$q">$q</a></code>
+</li>
+<li><code ng:non-bindable=""><a href="#/api/azLog">azLog</a></code>
+</li>
+</ul>
+<h2 id="usage">Usage</h2>
+<div class="usage"><pre class="prettyprint linenums">&lt;input-plate    name=""
+                id=""
+                bind-to=""
+                validation-type=""
+                ng-model-options=""
+                [maxlength=""]
+                [required]
+                [class=""]
+                [error-class=""]
+                [default-error-class=""]&gt;
+    &lt;validation key="required" error-message="errormessage.plate.required"&gt;&lt;/validation&gt;
+    &lt;validation key="pattern"&gt;No binded message&lt;/validation&gt;
+    &lt;validation key="customValidation"&gt;Another no binded message&lt;/validation&gt;
+    &lt;label-content&gt;
+       &lt;label style="height: 13px;" for="nameOfInput"&gt;Some nice Text&lt;/label&gt;
+    &lt;/label-content&gt;
+&lt;/input-plate&gt;</pre>
+<h4 id="usage_parameters">Parameters</h4><table class="variables-matrix table table-bordered table-striped"><thead><tr><th>Param</th><th>Type</th><th>Details</th></tr></thead><tbody><tr><td><b>name</b></td><td><a href="" class="label type-hint type-hint-string">string</a></td><td><div class="azdirectcore-validationmodule-directive-page azdirectcore-validationmodule-directive-inputplate-page"><p>Property name of the tag input that will be published.</p>
+</div></td></tr><tr><td><b>id</b></td><td><a href="" class="label type-hint type-hint-string">string</a></td><td><div class="azdirectcore-validationmodule-directive-page azdirectcore-validationmodule-directive-inputplate-page"><p>Property ID of the tag input that will be published.</p>
+</div></td></tr><tr><td><b>bind-to</b></td><td><a href="" class="label type-hint type-hint-string">string</a></td><td><div class="azdirectcore-validationmodule-directive-page azdirectcore-validationmodule-directive-inputplate-page"><p>Assignable angular expression to data-bind to</p>
+</div></td></tr><tr><td><b>validation-type</b></td><td><a href="" class="label type-hint type-hint-string">string</a></td><td><div class="azdirectcore-validationmodule-directive-page azdirectcore-validationmodule-directive-inputplate-page"><p>Type of Plate to publish, it can be choosed between :</p>
+<ul>
+    <li><b>normal</b> : Italian plate</li>
+    <li><strike><b>special</b> : Special plate</strike></li>
+    <li><b>bike</b> : Bike plate</li>
+    <li><b>moped</b> : Moped plate</li>
+</ul></div></td></tr><tr><td><b>ng-model-options</b></td><td><a href="" class="label type-hint type-hint-object">object</a></td><td><div class="azdirectcore-validationmodule-directive-page azdirectcore-validationmodule-directive-inputplate-page"><p>The <a href="#/api/ngModelOptions"><code>ng-model-options</code></a> attribute is a AngularJS directive
+allows tuning how model updates are done.</p>
+</div></td></tr><tr><td><b>maxlength</b> <div><em>(optional)</em></div></td><td><a href="" class="label type-hint type-hint-number">number</a></td><td><div class="azdirectcore-validationmodule-directive-page azdirectcore-validationmodule-directive-inputplate-page"><p>This will limit the input filling to custom value. By default will be setted by
+validationFactory configuration.</p>
+</div></td></tr><tr><td><b>required</b> <div><em>(optional)</em></div></td><td><a href="" class="label type-hint type-hint-string">string</a></td><td><div class="azdirectcore-validationmodule-directive-page azdirectcore-validationmodule-directive-inputplate-page"><p>This will make the input tag required and could generate the &quot;required&quot; error.</p>
+</div></td></tr><tr><td><b>class</b> <div><em>(optional)</em></div></td><td><a href="" class="label type-hint type-hint-string">string</a></td><td><div class="azdirectcore-validationmodule-directive-page azdirectcore-validationmodule-directive-inputplate-page"><p>This is the css Class that will be assigned to the input element.</p>
+</div></td></tr><tr><td><b>error-class</b> <div><em>(optional)</em></div></td><td><a href="" class="label type-hint type-hint-string">string</a></td><td><div class="azdirectcore-validationmodule-directive-page azdirectcore-validationmodule-directive-inputplate-page"><p>The css Class that will be assigned to the error
+label whenever the error key <code>MATCHS</code>. By default will be empty.</p>
+</div></td></tr><tr><td><b>default-error-class</b> <div><em>(optional)</em></div></td><td><a href="" class="label type-hint type-hint-string">string</a></td><td><div class="azdirectcore-validationmodule-directive-page azdirectcore-validationmodule-directive-inputplate-page"><p>The css Class that will be assigned to the error
+label whenever the error key <code>DOESNT MATCH</code>. By default will be <b>ng-hide</b></p>
+</div></td></tr></tbody></table></div>
+</div>
